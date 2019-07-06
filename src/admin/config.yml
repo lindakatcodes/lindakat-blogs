@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: 
+  repo: lindakatcodes/lindakat-blogs
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
