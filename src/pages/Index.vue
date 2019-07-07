@@ -1,50 +1,49 @@
 <template>
-  <Layout>
+    <Layout>
+        <h1 class="title">All Posts</h1>
 
-    <h1 class="title">All Posts</h1>
+        <ul class="all-posts">
+            <li v-for="post in $page.allPost.edges" :key="post.node.id">
+                <g-link :to="post.node.path">
+                    <h3 v-html="post.node.title"></h3>
+                </g-link>
+                <p>{{ post.node.excerpt }}</p>
+            </li>
+        </ul>
 
-    <ul class="all-posts">
-      <li v-for="post in $static.allPost.edges" :key="post.node.id">
-        <g-link :to="post.node.path"><h3 v-html="post.node.title"></h3></g-link>
-        <p> {{ post.node.excerpt }} </p>
-      </li>
-    </ul>
-
-    <Pager :info="$static.post.pageInfo"/>
-
-  </Layout>
+        <Pager :info="$page.allPost.pageInfo" />
+    </Layout>
 </template>
 
-<static-query>
- query Post ($page: Int) {
-  post: allPost (perPage: 2, page: $page) {
-    totalCount
-    pageInfo {
-      totalPages
-      currentPage
-    }
-    edges {
-      node {
-        id
-        title
-        path
-        excerpt
+<page-query>
+  query Post ($page: Int) {
+    allPost (perPage: 2, page: $page) @paginate {
+      totalCount
+      pageInfo {
+        totalPages
+        currentPage
+      }
+      edges {
+        node {
+          id
+          title
+          path
+          excerpt
+        }
       }
     }
   }
-}
-</static-query>
+</page-query>
 
 <script>
-  import { Pager } from "gridsome";
+import { Pager } from "gridsome";
 
-  export default {
+export default {
     components: {
-      Pager
+        Pager
     }
-  };
+};
 </script>
 
 <style>
-
 </style>
