@@ -1,13 +1,13 @@
 <template>
   <div class="layout">
     <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metaData.siteName }}</g-link>
-      </strong>
+      <h1 class="title">
+        {{ $static.metaData.siteName }}
+      </h1>
       <nav class="nav">
         <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about">About</g-link>
       </nav>
+      <div class="border"></div>
     </header>
     <slot/>
   </div>
@@ -23,10 +23,11 @@ query {
 
 <style>
 body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
+  font-family: var(--sans-serif);
+  margin: 0;
+  padding: 0;
   line-height: 1.5;
+  background: var(--softGray);
 }
 
 .layout {
@@ -40,11 +41,26 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-flow: wrap;
   margin-bottom: 20px;
   height: 80px;
 }
 
+.title {
+  color: var(--mainBlue);
+  font-family: var(--serif);
+}
+
 .nav__link {
   margin-left: 20px;
+  font-size: 1.2rem;
+  color: var(--mainGreen);
+}
+
+.border {
+  height: 4px;
+  width: 100vw;
+  margin-top: -25px;
+  background: linear-gradient(to right,var(--mainGreen),var(--mainBlue));
 }
 </style>

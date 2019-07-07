@@ -1,33 +1,53 @@
 <template>
   <Layout>
-    
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-    
-    <h1>Hello, world!</h1>
-   
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
 
-    <p class="home-links">
-      <a href="https://gridsome.org/docs" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
+    <h1 class="title">All Posts</h1>
+
+    <ul class="all-posts">
+      <li v-for="{ node } in $page.allPost.edges" :key="node.id">
+        <g-link :to="node.path"><h3 v-html="node.title"></h3></g-link>
+        <p> {{ node.excerpt }} </p>
+      </li>
+    </ul>
+
+    <Pager :info="$page.allPost.pageInfo"/>
 
   </Layout>
 </template>
 
-<script>
-export default {
-  metaInfo: {
-    title: 'Hello, world!'
+
+<page-query>
+  query Post ($page: Int) {
+  post: allPost (perPage: 2, page: $page) @paginate {
+    totalCount
+    pageInfo {
+      totalPages
+      currentPage
+      isFirst
+      isLast
+    }
+    edges {
+      node {
+        id
+        title
+        path
+        excerpt
+      }
+    }
   }
 }
+</page-query>
+
+<script>
+  import { Pager } from 'gridsome'
+
+  export default {
+    components: {
+      Pager
+    }
+  }
 </script>
 
 <style>
-.home-links a {
-  margin-right: 1rem;
-}
+
 </style>
