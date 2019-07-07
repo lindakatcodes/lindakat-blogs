@@ -12,7 +12,8 @@ collections:
     create: true
     slug: "{{slug}}"
     fields: 
+      - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Excerpt", name: "excerpt", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
