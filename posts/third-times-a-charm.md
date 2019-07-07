@@ -4,5 +4,7 @@ title: Third Time's a Charm!
 excerpt: Wahoooo
 tags:
   - 100DaysOfCode
+  - test
+  - JS
 ---
 Here goes nothing!
