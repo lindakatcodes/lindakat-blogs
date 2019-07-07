@@ -1,6 +1,8 @@
 ---
+date: 2019-07-07T01:58:17.344Z
 title: Third Time's a Charm!
 excerpt: Wahoooo
-date: 2019-07-07T01:58:17.344Z
+tags:
+  - 100DaysOfCode
 ---
 Here goes nothing!
