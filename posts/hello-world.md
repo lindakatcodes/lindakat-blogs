@@ -1,7 +1,7 @@
 ---
 date: 2019-07-08T05:50:55.318Z
 title: 'Hello, World!'
-excerpt: Welcome Message & What to Expect Here!
+description: Welcome Message & What to Expect Here!
 tags:
   - personal
   - behind the scenes
