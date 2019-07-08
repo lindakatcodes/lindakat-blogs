@@ -1,14 +1,9 @@
-# Default starter for Gridsome
+# My personal tech blog!
 
-This is the project you get when you run `gridsome create new-project`.
+Created using Gridsome and NetlifyCMS, and hosted on Netlify. I figured my blog would be as good as space as any to get some practice learning some new things, and since I've been interested in Vue and trying any sort of new databases and/or CMS platforms....this project gives me all of those things new!
 
-### 1. Install Gridsome CLI tool if you don't have
+This will stay very basic style-wise until I actually learn more about how everything works. I've managed to work out some basic styling and data gathering so far, and have some ideas for how to continue learning and improving!
 
-`npm install --global @gridsome/cli`
-
-### 2. Create a Gridsome project
-
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+Things on the plan to add:
+* Ability to click on tags and show posts with those tags
+* Better card-style view for posts on main page

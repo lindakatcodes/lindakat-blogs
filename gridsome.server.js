@@ -10,7 +10,33 @@ module.exports = function (api) {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api
   })
 
-  api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api
+  api.createPages(({ graphql, createPage }) => {
+    //   const allTags = [];
+
+    //   const { data } = await graphql(`{
+    //     Post {
+    //       allPost {
+    //         edges {
+    //           node {
+    //             tags
+    //           }
+    //         }
+    //       }
+    //     }
+    //   `)
+
+    //   createPage({
+    //     path: '/tags',
+    //     component: './src/pages/Tags.vue',
+    //     context: {
+    //       tagList: () => {
+    //         data.Post.allPost.edges.forEach(({ node }) => {
+    //           allTags.push(node.tags);
+    //       })
+    //       return allTags
+    //       }
+    //     }
+    //   })
+    // })
   })
 }

@@ -1,10 +1,9 @@
 :root {
     --mainBlue: #006699;
-    --textBlue: #14B1FF;
     --mainGreen: #339966;
-    --textGreen: #3CBE76;
-    --darkGray: #403B41;
-    --softGray: #DEDEDE;
+    --darkGray: hsla(290, 0%, 24%, 1);
+    --midGray: hsla(145, 0%, 32%, 1);
+    --softGray: hsla(0, 0%, 87%, 1);
     --serif: 'David Libre', serif;
     --sansSerif: 'Arimo', sans-serif;
 }
