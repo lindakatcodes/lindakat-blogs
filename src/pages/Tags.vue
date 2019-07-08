@@ -1,5 +1,5 @@
-<!--
 <template>
+<!--
     <Layout>
         <h1 class="title">All Tags</h1>
 
@@ -20,11 +20,10 @@
     }
   }
 </page-query>
-
+-->
 <script>
- console.log(Tags.$tagList());
+ <!-- console.log(Tags.$tagList()); -->
 </script>
 
 <style>
 </style>
--->
