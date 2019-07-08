@@ -7,3 +7,5 @@ This will stay very basic style-wise until I actually learn more about how every
 Things on the plan to add:
 * Ability to click on tags and show posts with those tags
 * Better card-style view for posts on main page
+* Add a favicon that fits the site
+* Read more links, possibly (on main view)
