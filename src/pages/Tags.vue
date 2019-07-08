@@ -1,3 +1,4 @@
+<!--
 <template>
     <Layout>
         <h1 class="title">All Tags</h1>
@@ -26,3 +27,4 @@
 
 <style>
 </style>
+-->
