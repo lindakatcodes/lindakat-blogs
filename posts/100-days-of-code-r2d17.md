@@ -5,7 +5,7 @@ description: Testing with Jest! expect(content).toBe(Node-related)
 tags:
   - 100DaysOfCode
 ---
-Today was all about getting started with testing Node! Specifically, we're going to be testing the task manager app we've been creating as part of [a Udemy course on learning Nodejs.]([www.udemy.com/the-complete-nodejs-developer-course-2](www.udemy.com/the-complete-nodejs-developer-course-2))
+Today was all about getting started with testing Node! Specifically, we're going to be testing the task manager app we've been creating as part of [a Udemy course on learning Nodejs](https://www.udemy.com/the-complete-nodejs-developer-course-2/).
 
 Tonight, all I really got through was installing our testing suite (we're using Jest), and then writing a few simple tests not related to our project, to start to get a feel for how it works.
 
