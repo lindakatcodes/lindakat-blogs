@@ -5,7 +5,7 @@
               <g-link :to="post.node.path" class="post_link">
                   <h3 v-html="post.node.title" class="post_link_text"></h3>
               </g-link>
-              <p class="post_excerpt">{{ post.node.excerpt }}</p>
+              <p class="post_blurb">{{ post.node.description }}</p>
               <div class="post_divider"></div>
           </li>
       </ul>
@@ -28,7 +28,7 @@
           id
           title
           path
-          excerpt
+          description
         }
       }
     }
@@ -65,7 +65,7 @@ export default {
   margin: 1em 0 0.5em 0;
 }
 
-.post_excerpt {
+.post_blurb {
   margin: 0;
   padding-left: 2vw;
   color: var(--darkGray);
