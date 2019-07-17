@@ -17,7 +17,7 @@
 
 <page-query>
   query Post ($page: Int) {
-    allPost (perPage: 2, page: $page) @paginate {
+    allPost (perPage: 15, page: $page) @paginate {
       totalCount
       pageInfo {
         totalPages
