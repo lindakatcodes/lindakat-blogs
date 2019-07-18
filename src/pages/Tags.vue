@@ -1,11 +1,12 @@
 <template>
-<!--
     <Layout>
+<!--
         <h1 class="title">All Tags</h1>
 
         <ul>
             <li>{{ $context.tagList() }}</li>
         </ul>
+    -->
     </Layout>
 </template>
 
@@ -20,9 +21,9 @@
     }
   }
 </page-query>
--->
+
 <script>
- <!-- console.log(Tags.$tagList()); -->
+ // console.log(Tags.$tagList()); 
 </script>
 
 <style>
