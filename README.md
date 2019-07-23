@@ -8,4 +8,6 @@ Things on the plan to add:
 * Ability to click on tags and show posts with those tags
 * Better card-style view for posts on main page
 * Add a favicon that fits the site
-* Read more links, possibly (on main view)
+* Show prev/next links to blogs on bottom of single posts
+* Add RSS feed plugin, so can cross-post to Dev.to
+* Comments, maybe? Or at least link to discuss on Twitter or Dev, something similar
