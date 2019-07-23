@@ -35,7 +35,7 @@ Luckily for me, I was able to figure this one out pretty quickly! I did this by 
 
 So, in the gridsome.server.js folder, inside the module.exports function, I wrote this line of code: 
 
-```
+``` js
 api.chainWebpack(config => { config.mode('development') });
 ```
 

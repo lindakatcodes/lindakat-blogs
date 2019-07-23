@@ -100,4 +100,18 @@ body {
   height: 4px;
   background: linear-gradient(to left,var(--mainGreen),var(--mainBlue));
 }
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 0.9em;
+    max-width: 65%;
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+
+  .header {
+    align-items: baseline;
+    margin-bottom: 0;
+  }
+}
 </style>

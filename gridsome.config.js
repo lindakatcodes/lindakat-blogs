@@ -25,6 +25,9 @@ module.exports = {
         remark: {
           plugins: [
             // ...local plugins
+            [ 'gridsome-plugin-remark-shiki', {
+              theme: 'nord'
+            }]
           ]
         }
       }

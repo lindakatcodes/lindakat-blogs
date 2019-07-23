@@ -52,10 +52,11 @@ export default {
     .post-title {
         grid-area: title;
         color: var(--mainGreen);
-        font-size: 1.7em;
+        font-size: 1.8em;
         border-bottom: 2px solid var(--mainBlue);
         margin-bottom: 0;
         font-family: var(--serif);
+        text-align: center;
     }
 
     .post-date {
@@ -85,7 +86,7 @@ export default {
 
     .tag {
         padding: 0 3%;
-        margin: 0 1%;
+        margin: 1% 1.5%;
         background: var(--midGray);
         color: var(--softGray);
         border-radius: 5px;
@@ -93,5 +94,18 @@ export default {
 
     .post-content {
         margin: 0 5%;
+    }
+
+    pre {
+      line-height: 1.5;
+      display: block;
+      border-radius: 5px;
+      padding: 1% 3%;
+      width: 95%;
+      white-space: pre-line;
+    }
+
+    a {
+      color: var(--mainBlue);
     }
 </style>
