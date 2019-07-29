@@ -5,9 +5,8 @@ Created using Gridsome and NetlifyCMS, and hosted on Netlify. I figured my blog 
 This will stay very basic style-wise until I actually learn more about how everything works. I've managed to work out some basic styling and data gathering so far, and have some ideas for how to continue learning and improving!
 
 Things on the plan to add:
-* Ability to click on tags and show posts with those tags
-* Better card-style view for posts on main page
+* Tags page, where you can see all the tags and click on them to view posts with those tags
 * Add a favicon that fits the site
-* Show prev/next links to blogs on bottom of single posts
-* Add RSS feed plugin, so can cross-post to Dev.to
+* Show prev/next links to the bottom of single posts
+* Add RSS feed plugin, so can cross-post to Dev.to?
 * Comments, maybe? Or at least link to discuss on Twitter or Dev, something similar
