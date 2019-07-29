@@ -62,7 +62,7 @@ body {
   color: var(--mainBlue);
   font-family: var(--serif);
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 .nav_link {

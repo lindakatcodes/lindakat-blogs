@@ -4,6 +4,7 @@
     --darkGray: hsla(290, 0%, 24%, 1);
     --midGray: hsla(145, 0%, 32%, 1);
     --softGray: hsla(0, 0%, 87%, 1);
+    --gradient: linear-gradient(to right,var(--mainGreen),var(--mainBlue));
     --serif: 'David Libre', serif;
     --sansSerif: 'Arimo', sans-serif;
 }

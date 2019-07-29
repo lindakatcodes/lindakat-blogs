@@ -29,6 +29,13 @@ module.exports = {
               theme: 'nord'
             }]
           ]
+        },
+        refs: {
+          tags: {
+            typeName: 'Tag',
+            route: '/tag/:id',
+            create: true
+          }
         }
       }
     },
