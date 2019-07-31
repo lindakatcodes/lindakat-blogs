@@ -19,7 +19,11 @@ Let me share a simple example we worked on to play around with this. This will s
 We started with an index.js file (our server file), which is running an Express app. (The io word you see is the variable that's set to our Express server, which socket.io is controlling.) In this file, we set up a variable for a counter, and then when a new client-side connection comes in, we send (emit) a custom named event, and the current value of our count variable. 
 
 ```js
-let count = 0;io.on('connection', (socket) => {   socket.emit('countUpdated', count); })
+let count = 0;
+```
+
+```js
+io.on('connection', (socket) => {   socket.emit('countUpdated', count); })
 ```
 
 The _socket.emit_ phrase is the key - that's what sends the data off to our client / browser side of things. 
