@@ -56,9 +56,11 @@ module.exports = {
         },
         feedItemOptions: node => ({
           title: node.title,
-          content: node.content,
+          description: node.content,
           url: 'https://lindakat-blogs.netlify.com' + node.path,
-          tags: node.tags
+          custom_elements: [
+            {'tags': node.tags}
+          ]
         }),
         output: {
           dir: './static',
