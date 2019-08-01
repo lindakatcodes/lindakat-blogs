@@ -58,8 +58,9 @@ module.exports = {
           title: node.title,
           description: node.content,
           url: 'https://lindakat-blogs.netlify.com' + node.path,
+          date: node.date,
           custom_elements: [
-            {'tags': node.tags}
+            {'tags': [...node.tags]}
           ]
         }),
         output: {
