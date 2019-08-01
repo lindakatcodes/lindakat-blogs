@@ -59,9 +59,7 @@ module.exports = {
           description: node.content,
           url: 'https://lindakat-blogs.netlify.com' + node.path,
           date: node.date,
-          custom_elements: [
-            {'tags': [...node.tags]}
-          ]
+          categories: node.tags
         }),
         output: {
           dir: './static',
