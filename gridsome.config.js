@@ -44,6 +44,27 @@ module.exports = {
       options: {
         publicPath: '/admin'
       }
+    },
+    {
+      use: 'gridsome-plugin-rss',
+      options: {
+        contentTypeName: 'Post',
+        feedOptions: {
+          title: 'LindaKat\'s Tech Blog',
+          feed_url: 'https://lindakat-blogs.netlify.com/rss.xml',
+          site_url: 'https://lindakat-blogs.netlify.com'
+        },
+        feedItemOptions: node => ({
+          title: node.title,
+          content: node.content,
+          url: 'https://lindakat-blogs.netlify.com' + node.path,
+          tags: node.tags
+        }),
+        output: {
+          dir: './static',
+          name: 'rss'
+        }
+      }
     }
   ]
 }
