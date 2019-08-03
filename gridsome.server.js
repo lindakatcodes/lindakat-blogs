@@ -15,7 +15,37 @@ module.exports = function (api) {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api
   })
 
-  api.createPages(({ graphql, createPage }) => {
+  api.createPages(async ({ graphql, createPage }) => {
+    const { data } = await graphql(`
+    query Post {
+      allPost {
+        edges {
+          node {
+            id
+            path
+            title
+          }
+        }
+      }
+    }`)
+
+    data.allPost.edges.forEach(({ node }, i, edges) => {
+      const prev = edges[i - 1]
+      const next = edges[i + 1]
+    
+      createPage({
+        path: node.path,
+        component: './src/templates/PostView.vue',
+        queryVariables: {
+          id: node.id,
+          prevId: prev ? prev.node.id : null,
+          nextId: next ? next.node.id : null
+        }
+      })
+    })
+  })
+
+  // api.createPages(({ graphql, createPage }) => {
     //   const allTags = [];
 
     //   const { data } = await graphql(`{
@@ -43,5 +73,5 @@ module.exports = function (api) {
     //     }
     //   })
     // })
-  })
+  // })
 }

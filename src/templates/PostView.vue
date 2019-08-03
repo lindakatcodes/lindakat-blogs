@@ -10,13 +10,19 @@
         </li>
       </ul>
     </section>
-    <main v-html="$page.post.content" class="post-content"></main>
+    <section v-html="$page.post.content" class="post-content"></section>
+    <section class="post-moreInfo">
+      <g-link class="post-discuss dev" href="/">Discuss this post on Dev.to</g-link>
+      <g-link class="post-discuss twitter" href="/">Discuss on Twitter</g-link>
+      <g-link class="post-link prev-link" v-if="$page.prev" :to="$page.prev.path"> ← {{ $page.prev.title }} </g-link>
+      <g-link class="post-link next-link" v-if="$page.next" :to="$page.next.path"> {{ $page.next.title }} → </g-link>
+    </section>
   </Layout>
 </template>
 
 <page-query>
-  query Post ($path: String!) {
-    post: post (path: $path) {
+  query Post ($id: String, $prevId: String, $nextId: String) {
+    post: post (id: $id) {
       title
       date (format: "MMM. DD, YYYY")
       timeToRead
@@ -25,6 +31,14 @@
         path
       }
       content
+    }
+    prev: post (id: $prevId) {
+      title
+      path
+    }
+    next: post (id: $nextId) {
+      title
+      path
     }
   }
 </page-query>
@@ -119,5 +133,44 @@
 
   a:hover {
     color: var(--mainGreen);
+  }
+
+  .post-moreInfo {
+    font-weight: 600;
+    font-size: 1.1em;
+    display: grid;
+    grid-template-areas: "dev twitter"
+                          "prev next";
+    grid-column-gap: 3%;
+    grid-template-columns: 1fr 1fr;
+    align-content: space-evenly;
+  }
+
+  .dev {
+    grid-area: dev;
+    justify-self: end;
+  }
+
+  .twitter {
+    grid-area: twitter;
+    justify-self: start;
+  }
+
+  .prev-link {
+    grid-area: prev;
+    justify-self: end;
+  }
+
+  .next-link {
+    grid-area: next;
+    justify-self: start;
+  }
+
+  .post-link {
+    color: var(--mainGreen);
+  }
+
+  .post-link:hover {
+    color: var(--mainBlue);
   }
 </style>

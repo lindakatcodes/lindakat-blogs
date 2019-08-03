@@ -7,6 +7,4 @@ This will stay very basic style-wise until I actually learn more about how every
 Things on the plan to add:
 * Tags page, where you can see all the tags and click on them to view posts with those tags
 * Add a favicon that fits the site
-* Show prev/next links to the bottom of single posts
-* Add RSS feed plugin, so can cross-post to Dev.to?
 * Comments, maybe? Or at least link to discuss on Twitter or Dev, something similar
