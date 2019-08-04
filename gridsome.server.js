@@ -11,10 +11,6 @@ module.exports = function (api) {
     config.mode('development');
   });
 
-  api.loadSource(({ addContentType }) => {
-    // Use the Data Store API here: https://gridsome.org/docs/data-store-api
-  })
-
   api.createPages(async ({ graphql, createPage }) => {
     const { data } = await graphql(`
     query Post {
@@ -24,15 +20,26 @@ module.exports = function (api) {
             id
             path
             title
+            tags {
+              id
+              path
+            }
           }
         }
       }
     }`)
 
+    const allTags = [];
+
     data.allPost.edges.forEach(({ node }, i, edges) => {
       const prev = edges[i - 1]
       const next = edges[i + 1]
-    
+
+      const nodeTags = node.tags;
+      nodeTags.forEach((tag) => {
+        allTags.push(tag.id);
+      })
+
       createPage({
         path: node.path,
         component: './src/templates/PostView.vue',
@@ -40,38 +47,23 @@ module.exports = function (api) {
           id: node.id,
           prevId: prev ? prev.node.id : null,
           nextId: next ? next.node.id : null
+        }, 
+        context: {
+          twitterHref: `https://twitter.com/intent/tweet?text=Check out this blog post by @lindakatcodes &url=https://lindakat-blogs.netlify.com${node.path}`,
+          devHref: `https://dev.to/search?q=${node.title} lindakatcodes`
         }
       })
     })
+    
+    const flatArray = allTags.reduce((acc, val) => acc.concat(val), []);
+    const cleanTags = new Set(flatArray);
+    
+    createPage({
+      path: '/tags',
+      component: './src/pages/Tags.vue',
+      context: {
+        tagList: cleanTags
+      }
+    })
   })
-
-  // api.createPages(({ graphql, createPage }) => {
-    //   const allTags = [];
-
-    //   const { data } = await graphql(`{
-    //     Post {
-    //       allPost {
-    //         edges {
-    //           node {
-    //             tags
-    //           }
-    //         }
-    //       }
-    //     }
-    //   `)
-
-    //   createPage({
-    //     path: '/tags',
-    //     component: './src/pages/Tags.vue',
-    //     context: {
-    //       tagList: () => {
-    //         data.Post.allPost.edges.forEach(({ node }) => {
-    //           allTags.push(node.tags);
-    //       })
-    //       return allTags
-    //       }
-    //     }
-    //   })
-    // })
-  // })
 }

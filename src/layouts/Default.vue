@@ -113,5 +113,9 @@ body {
     align-items: baseline;
     margin-bottom: 0;
   }
+
+  .header-border {
+    margin-top: 0;
+  }
 }
 </style>

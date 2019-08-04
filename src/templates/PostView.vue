@@ -12,8 +12,8 @@
     </section>
     <section v-html="$page.post.content" class="post-content"></section>
     <section class="post-moreInfo">
-      <g-link class="post-discuss dev" href="/">Discuss this post on Dev.to</g-link>
-      <g-link class="post-discuss twitter" href="/">Discuss on Twitter</g-link>
+      <a class="post-discuss dev" :href="$context.devHref" target="_blank">Discuss this post on Dev.to</a>
+      <a class="post-discuss twitter" :href="$context.twitterHref" target="_blank">Share on Twitter</a>
       <g-link class="post-link prev-link" v-if="$page.prev" :to="$page.prev.path"> ← {{ $page.prev.title }} </g-link>
       <g-link class="post-link next-link" v-if="$page.next" :to="$page.next.path"> {{ $page.next.title }} → </g-link>
     </section>
@@ -31,6 +31,7 @@
         path
       }
       content
+      path
     }
     prev: post (id: $prevId) {
       title
@@ -172,5 +173,23 @@
 
   .post-link:hover {
     color: var(--mainBlue);
+  }
+
+  @media screen and (max-width: 500px) {
+    .post-title {
+      font-size: 2em;
+    }
+    
+    .post-moreInfo {
+      grid-template-areas: "dev" 
+                           "twitter"
+                           "prev"
+                           "next";
+      grid-template-columns: 1fr;
+    }
+
+    .dev, .twitter, .prev-link, .next-link {
+      justify-self: center;
+    }
   }
 </style>
