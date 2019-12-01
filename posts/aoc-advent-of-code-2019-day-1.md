@@ -4,13 +4,12 @@ description: 'Thoughts and code for day 1, & some writing fun!'
 tags:
   - AoC
   - adventOfCode
-  - javaScript
 date: 2019-12-01T07:24:50.832Z
 ---
 Advent of Code is finally here, and I'm so excited!! This is such a fun code challenge, and I was really bummed when I couldn't keep up with it last year, so I'm determined to stay on it this year and follow through until the end!
 
 <details>
-<summary>Spoilers will follow from here on out - avoid until you've solved the problems if you want!</summary>
+<summary>**Spoilers will follow from here on out** - avoid until you've solved the problems if you want! Click the arrow to view.</summary>
 
 This year is set in space! I think it'll be really fun to see how the story unfolds.
 Day 1, thankfully, felt pretty good! 
@@ -72,32 +71,31 @@ console.log(`Part 2: ${newTotalFuel}`);
 ```
 
 If you'd like to read the full breakdown for what today's puzzle required, you can check it out [on the main site](https://adventofcode.com/2019/day/1). You should be able to see it, even if you're not signed in. 
+
 </details>
 
 Part of this year's new changes on the official subreddit is a poem contest! Each day, you can submit a poem about the challenge itself, the creator, or general programming, and every few days they'll reward some people with reddit points and make a collection of their favorites for an end-of-year collection. I love poetry, so couldn't resist getting in on the fun for at least one day! Enjoy!
 
->Adventure awaits!
-
->Discover the cosmos
-
->Venture into the unknown
-
->Earn fifty stars to save Christmas!
-
->No one goes alone, however
-
->There's friendly folks to help
-
-
->Overly dramatic situations await
-
->Find Santa and bring him home!
-
-
->Come code with us!
-
->Outer space is calling
-
->Don't be afraid
-
->Elves will guide the way!
+> Adventure awaits!
+>
+> Discover the cosmos
+>
+> Venture into the unknown
+>
+> Earn fifty stars to save Christmas!
+>
+> No one goes alone, however
+>
+> There's friendly folks to help
+>
+> Overly dramatic situations await
+>
+> Find Santa and bring him home!
+>
+> Come code with us!
+>
+> Outer space is calling
+>
+> Don't be afraid
+>
+> Elves will guide the way!
