@@ -5,7 +5,7 @@ description: >-
   Redoing a personal project - status update from (basically) the starting
   point.
 tags:
-  - '#stamp-inventory'
+  - stamp-inventory
 ---
 As the title suggests - tonight was spent making some reasonable progress towards updating my stamp inventory site!
 
