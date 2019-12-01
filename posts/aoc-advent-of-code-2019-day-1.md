@@ -78,24 +78,26 @@ Part of this year's new changes on the official subreddit is a poem contest! Eac
 
 >Adventure awaits!
 
->Discover the cosmos
+>Discover the cosmos
 
->Venture into the unknown
+>Venture into the unknown
 
->Earn fifty stars to save Christmas!
+>Earn fifty stars to save Christmas!
 
->No one goes alone, however
+>No one goes alone, however
 
->There's friendly folks to help
+>There's friendly folks to help
+
 
 >Overly dramatic situations await
 
 >Find Santa and bring him home!
 
+
 >Come code with us!
 
->Outer space is calling
+>Outer space is calling
 
->Don't be afraid
+>Don't be afraid
 
->Elves will guide the way!
+>Elves will guide the way!
