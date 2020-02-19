@@ -1,11 +1,11 @@
 ---
-date: 2019-11-06T06:30:53.869Z
 title: Stamp Inventory Refactor - part 1!
 description: >-
   Redoing a personal project - status update from (basically) the starting
   point.
 tags:
-  - stamp-inventory
+  - stampInventory
+date: 2019-11-06T06:30:53.869Z
 ---
 As the title suggests - tonight was spent making some reasonable progress towards updating my stamp inventory site!
 
