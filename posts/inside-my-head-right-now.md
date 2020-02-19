@@ -1,9 +1,9 @@
 ---
-date: 2019-07-17T01:14:16.943Z
 title: Inside My Head Right Now
 description: Thoughts in the Middle of the Job Search
 tags:
-  - Job Search
+  - jobSearch
+date: 2019-07-17T01:14:16.943Z
 ---
 **I'm gonna be real with you - I've been struggling the past few days.** 
 
