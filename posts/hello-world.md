@@ -1,10 +1,10 @@
 ---
-date: 2019-07-08T05:50:55.318Z
 title: 'Hello, World!'
 description: Welcome Message & What to Expect Here!
 tags:
   - personal
-  - behind the scenes
+  - behindTheScenes
+date: 2019-07-08T05:50:55.318Z
 ---
 ## Welcome to my new blog!
 
