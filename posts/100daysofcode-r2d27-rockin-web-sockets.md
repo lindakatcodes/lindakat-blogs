@@ -1,10 +1,10 @@
 ---
-date: 2019-07-31T05:29:23.572Z
 title: 100DaysOfCode R2D27 - Rockin' (Web)Sockets!
 description: 'More Node learning - starting the chat app, & Socket.io!'
 tags:
   - 100DaysOfCode
-  - Node Course
+  - nodeCourse
+date: 2019-07-31T05:29:23.572Z
 ---
 I started the last project in my [Node course](https://www.udemy.com/the-complete-nodejs-developer-course-2/) - a chat app! I did the groundwork videos yesterday - getting libraries installed and new files/directories set up.
 
