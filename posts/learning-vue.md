@@ -21,12 +21,50 @@ So let's begin!
 
 Any time you'd like Vue to control a part of the DOM in a project, you'll create a new instance of Vue. Basically, this is a structured grouping of information needed for a piece of your site. 
 
-You declare the instance in your JS file, & then your HTML file can access that data. It's pretty neat!
+You declare the instance in your JS file, which will look something like this:
 
 ```
-<div class="product-info">  <h1>{{ product }}</h1>  <p>{{ description }}</p></div>
+var app = new Vue({
 ```
 
 ```
-    
+  el: '#app',
+```
+
+```
+  data: {
+```
+
+```
+    product: 'Socks',
+```
+
+```
+    description: 'A pair of warm, fuzzy socks'
+```
+
+```
+  } 
+```
+
+```
+})
+```
+
+Then in your HTML file, you can access the data from your instance. It's pretty neat!
+
+```
+<div class="product-info">
+```
+
+```
+   <h1>{{ product }}</h1>
+```
+
+```
+   <p>{{ description }}</p>
+```
+
+```
+</div>
 ```
