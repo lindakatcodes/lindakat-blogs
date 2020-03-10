@@ -16,3 +16,25 @@ So I'm using this post as a basic, beginner's cheat sheet for examples of how to
 So let's begin!
 
 <hr>
+
+# The Vue Instance
+
+Any time you'd like Vue to control a part of the DOM in a project, you'll create a new instance of Vue. Basically, this is a structured grouping of information needed for a piece of your site. 
+
+You declare the instance in your JS file, & then your HTML file can access that data. It's pretty neat!
+
+```
+<div class="product-info">
+```
+
+```
+    <h1>{{ product }}</h1>
+```
+
+```
+    <p>{{ description }}</p>
+```
+
+```
+  </div>
+```
