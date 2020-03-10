@@ -91,4 +91,80 @@ Second - Vue is a reactive framework, which means that when you change a value i
 
 # Data / Attribute Binding
 
-We can also directly bind data to an attribute in Vue. Unlike the expression
+We can also directly bind data to an attribute in Vue. Unlike the expressions we just talked about, this will be a piece of data that's directly tied to an HTML attribute. 
+
+Say this is our updated JS file:
+
+```
+var app = new Vue({
+```
+
+```
+  el: '#app',
+```
+
+```
+  data: {
+```
+
+```
+    product: 'Socks',
+```
+
+```
+    image: 'https://www.vuemastery.com/images/challenges/vmSocks-green-onWhite.jpg',
+```
+
+```
+    link: 'http://www.google.com'
+```
+
+```
+  } 
+```
+
+```
+})
+```
+
+We've added two new keys to our data object. 
+
+To bind this to a specific attribute, it will look like this in our HTML:
+
+```
+<div class="product-image">
+```
+
+```
+      <img v-bind:src="image" />
+```
+
+```
+    </div>
+```
+
+You'll use the "v-bind:" to show Vue you want to bind some data here, then you list which attribute you're binding to - in this case, the src attribute. Then, where you'd otherwise write in the data, you write the key from your data object instead. 
+
+This doesn't just have to be for links - you can use it with text as well, or really any attribute that you want the data to be able to automatically stay updated.
+
+Since this is a pretty common thing, there's also a short hand way to write this, which is just the colon:
+
+```
+<div class="product-info">
+```
+
+```
+      <h1>{{ product }}</h1>
+```
+
+```
+      <a :href="link">Click here</a>
+```
+
+```
+    </div>
+```
+
+So it almost looks just like it normally would, only the href has a : in front of it, and instead of a url inside the quotes, we have the key from our data object. 
+
+<hr>
