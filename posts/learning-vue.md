@@ -88,3 +88,7 @@ First - It's really easy to start using Vue - you can plug it into your projects
 Second - Vue is a reactive framework, which means that when you change a value in your Vue instance, anywhere it's referenced in your HTML will be updated automatically. This is almost like real magic, honestly. It's so cool.
 
 <hr>
+
+# Data / Attribute Binding
+
+We can also directly bind data to an attribute in Vue. Unlike the expression
