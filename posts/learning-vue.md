@@ -51,9 +51,9 @@ var app = new Vue({
 })
 ```
 
-Anytime you're starting a new instance, you use the keyword new. Think of the Vue instance as a big object, with lots of pieces of data (since that's basically what it is, I think). Here, we've got an "el", which stands for element - this is the ID you're trying to target in your HTML, the element this instance is tied to. Then you can add some data, with whatever you'd like inside it. For these examples, it's building out a website to sell socks, so we've got a product & description listed.
+Anytime you're starting a new instance, you use the keyword new. Think of the Vue instance as a big object, with lots of pieces of data (since that's essentially what you're doing - Vue holds a big options object, with all sorts of things). Here, we've got an "el", which stands for element - this is the ID you're trying to target in your HTML, the element this instance is going to be able to interact with. Then you can add some data, with whatever you'd like inside it. For these examples, it's building out a website to sell socks, so we've got a product & description listed.
 
-Then in your HTML file, you can access the data from your instance with double braces around the key word. It's pretty neat!
+Then in your HTML file, you can access the data from your instance with double braces around the key word. This is a JS expression used in HTML - it's pretty neat! And since this is a JS expression, you can also use this to tie different pieces of data together & create new values.
 
 ```
 <div id="app">
@@ -78,3 +78,13 @@ Then in your HTML file, you can access the data from your instance with double b
 ```
 </div> 
 ```
+
+<hr>
+
+## Two quick side notes:
+
+First - It's really easy to start using Vue - you can plug it into your projects with a script tag, like you would your style sheet or your regular JS files! 
+
+Second - Vue is a reactive framework, which means that when you change a value in your Vue instance, anywhere it's referenced in your HTML will be updated automatically. This is almost like real magic, honestly. It's so cool.
+
+<hr>
