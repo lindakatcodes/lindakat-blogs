@@ -24,17 +24,9 @@ Any time you'd like Vue to control a part of the DOM in a project, you'll create
 You declare the instance in your JS file, & then your HTML file can access that data. It's pretty neat!
 
 ```
-<div class="product-info">
+<div class="product-info">  <h1>{{ product }}</h1>  <p>{{ description }}</p></div>
 ```
 
 ```
-    <h1>{{ product }}</h1>
-```
-
-```
-    <p>{{ description }}</p>
-```
-
-```
-  </div>
+    
 ```
