@@ -51,20 +51,30 @@ var app = new Vue({
 })
 ```
 
-Then in your HTML file, you can access the data from your instance. It's pretty neat!
+Anytime you're starting a new instance, you use the keyword new. Think of the Vue instance as a big object, with lots of pieces of data (since that's basically what it is, I think). Here, we've got an "el", which stands for element - this is the ID you're trying to target in your HTML, the element this instance is tied to. Then you can add some data, with whatever you'd like inside it. For these examples, it's building out a website to sell socks, so we've got a product & description listed.
+
+Then in your HTML file, you can access the data from your instance with double braces around the key word. It's pretty neat!
 
 ```
-<div class="product-info">
-```
-
-```
-   <h1>{{ product }}</h1>
-```
-
-```
-   <p>{{ description }}</p>
+<div id="app">
 ```
 
 ```
-</div>
+  <div class="product-info">
+```
+
+```
+    <h1>{{ product }}</h1>
+```
+
+```
+    <p>{{ description }}</p>
+```
+
+```
+  </div>
+```
+
+```
+</div> 
 ```
