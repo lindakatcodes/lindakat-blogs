@@ -24,31 +24,7 @@ Any time you'd like Vue to control a part of the DOM in a project, you'll create
 You declare the instance in your JS file, which will look something like this:
 
 ```
-var app = new Vue({
-```
-
-```
-  el: '#app',
-```
-
-```
-  data: {
-```
-
-```
-    product: 'Socks',
-```
-
-```
-    description: 'A pair of warm, fuzzy socks'
-```
-
-```
-  } 
-```
-
-```
-})
+var app = new Vue({  el: '#app',  data: {    product: 'Socks',    description: 'A pair of warm, fuzzy socks'  } })
 ```
 
 Anytime you're starting a new instance, you use the keyword new. Think of the Vue instance as a big object, with lots of pieces of data (since that's essentially what you're doing - Vue holds a big options object, with all sorts of things). Here, we've got an "el", which stands for element - this is the ID you're trying to target in your HTML, the element this instance is going to be able to interact with. Then you can add some data, with whatever you'd like inside it. For these examples, it's building out a website to sell socks, so we've got a product & description listed.
