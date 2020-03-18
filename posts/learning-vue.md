@@ -33,9 +33,9 @@ var app = new Vue({
 })
 ```
 
-Anytime you're starting a new instance, you use the keyword new. Think of the Vue instance as a big object, with lots of pieces of data (since that's essentially what you're doing - Vue holds a big options object, with all sorts of things). Here, we've got an "el", which stands for element - this is the ID you're trying to target in your HTML, the element this instance is going to be able to interact with. Then you can add some data, with whatever you'd like inside it. For these examples, it's building out a website to sell socks, so we've got a product & description listed.
+Anytime you're starting a new instance, you use the keyword new. Think of the Vue instance as a big object container, with lots of pieces of data (since that's essentially what you're doing - Vue holds a big options object, with all sorts of things). Here, we've got an "el", which stands for element - this is the ID you're trying to target in your HTML, the element this instance is going to be able to interact with. Then you can add some data, with whatever you'd like inside it. For these examples, it's building out a website to sell socks, so we've got a product & description listed.
 
-Then in your HTML file, you can access the data from your instance with double braces around the key word. This is a JS expression used in HTML - it's pretty neat! And since this is a JS expression, you can also use this to tie different pieces of data together & create new values.
+Then in your HTML file, you can access the data from your Vue instance with double braces around the key word. This is a JS expression used in HTML - it's pretty neat! And since this is a JS expression, you can also use this to tie different pieces of data together & create new values.
 
 ```js
 <div id="app">
@@ -58,7 +58,7 @@ Second - Vue is a reactive framework, which means that when you change a value i
 
 # Data / Attribute Binding
 
-We can also directly bind data to an attribute in Vue. Unlike the expressions we just talked about, this will be a piece of data that's directly tied to an HTML attribute. 
+We can also directly bind data to an attribute in Vue. Unlike the expressions we just talked about (which can be used on any sort of attribute we want), this will be a piece of data that's directly tied to an HTML attribute. 
 
 Say this is our updated JS file:
 
@@ -99,3 +99,5 @@ Since this is a pretty common thing, there's also a short hand way to write this
 So it almost looks just like it normally would, only the href has a : in front of it, and instead of a url inside the quotes, we have the key from our data object. 
 
 <hr>
+
+
