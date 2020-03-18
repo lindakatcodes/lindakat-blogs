@@ -89,7 +89,7 @@ This doesn't just have to be for links - you can use it with text as well, or re
 
 Since this is a pretty common thing, there's also a short hand way to write this, which is just the colon:
 
-```vue
+```js
 <div class="product-info">
  <h1>{{ product }}</h1>
  <a :href="link">Click here</a>
