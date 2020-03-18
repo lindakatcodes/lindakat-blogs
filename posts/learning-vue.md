@@ -31,27 +31,12 @@ Anytime you're starting a new instance, you use the keyword new. Think of the Vu
 
 Then in your HTML file, you can access the data from your instance with double braces around the key word. This is a JS expression used in HTML - it's pretty neat! And since this is a JS expression, you can also use this to tie different pieces of data together & create new values.
 
-```
+```js
 <div id="app">
-```
-
-```
   <div class="product-info">
-```
-
-```
     <h1>{{ product }}</h1>
-```
-
-```
     <p>{{ description }}</p>
-```
-
-```
   </div>
-```
-
-```
 </div> 
 ```
 
