@@ -100,3 +100,7 @@ So it almost looks just like it normally would, only the href has a : in front o
 
 <hr>
 
+One of the big reasons to use JS on your website is the ability to perform different actions based on logic. Typically, these work out as conditional logic (if/else) and looping over an array of things (for loops especially). Good news - Vue makes this really easy!
+
+<hr>
+
