@@ -12,4 +12,22 @@ export default function (Vue, { router, head, isClient }) {
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css?family=Arimo|David+Libre'
   })
+
+  head.meta.push({
+    key: 'og:title',
+    name: 'og:title',
+    content: 'LindaKat Blogs'
+  }, {
+    key: 'og:url',
+    name: 'og:url',
+    content: 'https://www.lindakat-blogs.netlify.app'
+  }, {
+    key: 'og:image',
+    name: 'og:image',
+    content: './assets/og_background.png'
+  }, {
+    key: 'og:type',
+    name: 'og:type',
+    content: 'website'
+  })
 }

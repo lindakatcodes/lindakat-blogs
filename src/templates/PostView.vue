@@ -32,6 +32,7 @@
       }
       content
       path
+      description
     }
     prev: post (id: $prevId) {
       title
@@ -48,7 +49,29 @@
   export default {
     metaInfo() {
       return {
-        title: this.$page.post.title
+        title: this.$page.post.title,
+        meta: [
+          {
+            key: 'og:title',
+            name: 'og:title',
+            content: this.$page.post.title
+          },
+          {
+            key: 'og:type',
+            name: 'og:type',
+            content: 'article'
+          },
+          {
+            key: 'og:description',
+            name: 'og:description',
+            content: this.$page.post.description
+          },
+          {
+            key: 'og:url',
+            name: 'og:url',
+            content: this.$page.post.path
+          }
+        ]
       };
     }
   };

@@ -106,4 +106,8 @@
     display: flex;
     justify-content: center;
   }
+
+  h2 {
+    font-family: var(--serif);
+  }
 </style>
