@@ -15,19 +15,23 @@ export default function (Vue, { router, head, isClient }) {
 
   head.meta.push({
     key: 'og:title',
-    name: 'og:title',
+    property: 'og:title',
     content: 'LindaKat Blogs'
   }, {
     key: 'og:url',
-    name: 'og:url',
+    property: 'og:url',
     content: 'https://www.lindakat-blogs.netlify.app'
   }, {
     key: 'og:image',
-    name: 'og:image',
+    property: 'og:image',
     content: './assets/og_background.png'
   }, {
     key: 'og:type',
-    name: 'og:type',
+    property: 'og:type',
     content: 'website'
+  }, {
+    key: 'og:description',
+    property: 'og:description',
+    content: 'The personal tech blog of Linda T.'
   })
 }
