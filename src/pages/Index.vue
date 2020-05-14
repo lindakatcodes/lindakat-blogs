@@ -58,10 +58,10 @@
 
   .post-info {
     border-radius: 10px;
-    box-shadow: 2px 2px 10px var(--midGray);
+    box-shadow: 2px 2px 10px var(--darkGray);
     padding: 0.5% 3% 2%;
     margin-bottom: 3%;
-    
+    background: var(--softGray);
   }
 
   .post-item .post_link {

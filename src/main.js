@@ -10,7 +10,7 @@ export default function (Vue, { router, head, isClient }) {
 
   head.link.push({
     rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css?family=Arimo|David+Libre'
+    href: 'https://fonts.googleapis.com/css?family=Arimo|PT+Serif:wght@700'
   })
 
   head.meta.push({

@@ -4,6 +4,10 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+const shiki = require('shiki')
+
+const overnightSlumber = shiki.loadTheme('./static/overnight-slumber-italic.json')
+
 module.exports = {
   siteName: 'LindaKat Blogs',
   transformers: {
@@ -26,7 +30,7 @@ module.exports = {
           plugins: [
             // ...local plugins
             [ 'gridsome-plugin-remark-shiki', {
-              theme: 'nord'
+              theme: overnightSlumber
             }]
           ]
         },
