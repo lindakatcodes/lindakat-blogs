@@ -21,7 +21,7 @@ module.exports = function (api) {
             path
             title
             tags {
-              id
+              title
               path
             }
           }
@@ -29,16 +29,9 @@ module.exports = function (api) {
       }
     }`)
 
-    const allTags = [];
-
     data.allPost.edges.forEach(({ node }, i, edges) => {
       const prev = edges[i - 1]
       const next = edges[i + 1]
-
-      const nodeTags = node.tags;
-      nodeTags.forEach((tag) => {
-        allTags.push(tag.id);
-      })
 
       createPage({
         path: node.path,
@@ -53,17 +46,26 @@ module.exports = function (api) {
           devHref: `https://dev.to/search?q=${node.title} lindakatcodes`
         }
       })
+
+      const nodeTags = node.tags;
+      nodeTags.forEach((tag) => {
+        createPage({
+          path: '/tag/:title',
+          component: './src/templates/TagView.vue',
+          queryVariables: {
+            title: tag.title,
+            path: tag.path
+          }
+        })
+      })
+
     })
-    
-    const flatArray = allTags.reduce((acc, val) => acc.concat(val), []);
-    const cleanTags = new Set(flatArray);
-    
-    createPage({
-      path: '/tags',
-      component: './src/pages/Tags.vue',
-      context: {
-        tagList: cleanTags
-      }
-    })
+  })
+
+  api.loadSource(actions => {
+    const posts = actions.addCollection('Post')
+    const tags = actions.addCollection('Tag')
+  
+    posts.addReference('tags', 'Tag')
   })
 }

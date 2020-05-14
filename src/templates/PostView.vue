@@ -96,7 +96,7 @@
     font-size: 2.4em;
     border-bottom: 2px solid var(--mainBlue);
     margin-bottom: 0;
-    font-family: var(--serif);
+    font-family: var(--headerFont);
     text-align: center;
   }
 

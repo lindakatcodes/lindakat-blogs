@@ -37,7 +37,7 @@ module.exports = {
         refs: {
           tags: {
             typeName: 'Tag',
-            route: '/tag/:id',
+            path: './tag/:id',
             create: true
           }
         }

@@ -30,13 +30,17 @@ query {
 
 <style>
 body {
-  font-family: var(--sans-serif);
+  font-family: var(--bodyFont);
   margin: 0;
   padding: 0;
   line-height: 1.5;
   background: var(--softGray);
   font-size: 18px;
   color: var(--darkGray);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--headerFont);
 }
 
 .layout {
@@ -60,7 +64,7 @@ body {
 
 .title {
   color: var(--mainBlue);
-  font-family: var(--serif);
+  font-family: var(--headerFont);
   text-decoration: none;
   font-size: 1.4rem;
 }
@@ -68,7 +72,7 @@ body {
 .nav_link {
   margin-right: 20px;
   font-size: 1.3rem;
-  font-family: var(--serif);
+  font-family: var(--headerFont);
   color: var(--mainGreen);
   text-decoration-color: var(--mainBlue);
 }

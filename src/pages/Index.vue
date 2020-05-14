@@ -108,6 +108,6 @@
   }
 
   h2 {
-    font-family: var(--serif);
+    font-family: var(--headerFont);
   }
 </style>
