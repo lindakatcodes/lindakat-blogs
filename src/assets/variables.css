@@ -1,10 +1,17 @@
 :root {
-    --mainBlue: #006699;
+    /* --mainBlue: #006699;
     --mainGreen: #339966;
     --darkGray: hsla(290, 0%, 24%, 1);
     --midGray: hsla(145, 0%, 32%, 1);
     --softGray: hsla(0, 0%, 87%, 1);
-    --gradient: linear-gradient(to right,var(--mainGreen),var(--mainBlue));
+    --gradient: linear-gradient(to right,var(--mainGreen),var(--mainBlue)); */
+
     --headerFont: 'Oswald', sans-serif;
     --bodyFont: 'Arimo', sans-serif;
+    --darkBackground: #416283;
+    --lightBackground: #7F948F;
+    --darkText: #382A1F;
+    --lightText: #E6E9EE;
+    --accentSolid: #F0B72C;
+    --accentGradient: linear-gradient(270deg, #E07263 0%, #F0B72C 32.92%, #E07263 65.21%, #F0B72C 100%); 
 }

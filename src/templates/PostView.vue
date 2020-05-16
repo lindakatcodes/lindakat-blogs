@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout :notRoot="true">
     <section class="post-meta">
       <h2 class="post-title"> {{ $page.post.title }} </h2>
       <p class="post-date"> {{$page.post.date }} </p>
@@ -88,29 +88,33 @@
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     justify-items: center;
+    font-size: 1.1em;
   }
 
   .post-title {
     grid-area: title;
-    color: var(--mainGreen);
-    font-size: 2.4em;
-    border-bottom: 2px solid var(--mainBlue);
+    color: var(--lightText);
+    font-size: 2.5em;
     margin-bottom: 0;
     font-family: var(--headerFont);
     text-align: center;
+    border: 4px solid;
+    border-image-source: var(--accentGradient);
+    border-image-slice: 0 0 7 0;
+    border-bottom: 4px solid var(--accentSolid);
   }
 
   .post-date {
     grid-area: date;
     justify-self: end;
-    color: var(--mainBlue);
+    color: var(--lightText);
     margin: 6% 0 2% 0;
   }
 
   .post-readtime {
     grid-area: time;
     justify-self: start;
-    color: var(--mainGreen);
+    color: var(--accentSolid);
     margin: 6% 0 2% 0;
   }
 
@@ -123,23 +127,30 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    font-weight: 600;
   }
 
   .tag {
     padding: 0 3%;
     margin: 1% 1.5%;
-    background: var(--midGray);
+    background: var(--lightBackground);
     border-radius: 5px;
   }
 
   .tag-link {
-    color: var(--softGray);
+    color: var(--darkText);
     text-decoration: none;
+    font-family: var(--headerFont);
+  }
+
+  .tag-link:hover {
+    color: var(--lightText);
   }
   
   .post-content {
     margin: 0 auto;
     max-width: 620px;
+    font-size: 18px;
   }
 
   pre {
@@ -151,12 +162,22 @@
     white-space: pre-line;
   }
 
+  .shiki-inline {
+    padding: 0.25% 0.45%;
+  }
+
   a {
-    color: var(--mainBlue);
+    color: var(--accentSolid);
   }
 
   a:hover {
-    color: var(--mainGreen);
+    color: var(--darkText);
+  }
+
+  hr {
+    border: 0;
+    height: 3px;
+    background: var(--accentGradient);
   }
 
   .post-moreInfo {
@@ -165,9 +186,14 @@
     display: grid;
     grid-template-areas: "dev twitter"
                           "prev next";
-    grid-column-gap: 3%;
     grid-template-columns: 1fr 1fr;
-    align-content: space-evenly;
+    gap: 50% 10%;
+    align-content: space-between;
+    justify-content: space-between;
+  }
+
+  .post-discuss:hover {
+    color: var(--lightText);
   }
 
   .dev {
@@ -191,11 +217,11 @@
   }
 
   .post-link {
-    color: var(--mainGreen);
+    color: var(--lightText);
   }
 
   .post-link:hover {
-    color: var(--mainBlue);
+    color: var(--darkText);
   }
 
   @media screen and (max-width: 500px) {

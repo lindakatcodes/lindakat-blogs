@@ -1,21 +1,18 @@
 <template>
-  <Layout>
-    <main>
-      <h1 class="tag-page-title">#{{ $page.tag.title }} Posts</h1>
-      <div class="post_divider"></div>
-      <ul class="all-posts">
-        <li v-for="post in posts" :key="post.id" class="post-item">
-          <article class="post-info">
-            <g-link :to="post.path" class="post_link">
-              <h2 v-html="post.title" class="post_link_text"></h2>
-            </g-link>
-            <span class="post-date">{{ post.date }}</span>
-            <span class="post-readtime">{{ post.timeToRead }} min. read</span>
-            <p class="post_blurb">{{ post.description }}</p>
-          </article>
-        </li>
-      </ul>
-    </main>
+  <Layout :notRoot="true">
+    <h2 class="tag-page-title">#{{ $page.tag.title }} Posts</h2>
+    <div class="post_divider"></div>
+    <ul class="all-posts">
+      <li v-for="post in posts" :key="post.id" class="post-item">
+        <article class="post-info">
+          <g-link :to="post.path" class="post_link">
+            <h2 v-html="post.title" class="post_link_text"></h2>
+          </g-link>
+          <p class="post_blurb">{{ post.description }}</p>
+          <span class="post-readtime">{{ post.timeToRead }} min. read</span>
+        </article>
+      </li>
+    </ul>
   </Layout>
 </template>
 
@@ -32,7 +29,6 @@
               title
               path
               description
-              date (format: "MMM. DD, YYYY")
               timeToRead
             }
           }
@@ -59,20 +55,89 @@ export default {
 
 <style>
   .tag-page-title {
-    margin: 2% auto 0;
     text-align: center;
-    color: var(--midGray);
-    width: 80%;
-  }
-
-  .post_divider {
-    height: 4px;
-    width: 60%;
+    font-size: 2.5em;
+    color: var(--lightText);
+    border: 4px solid;
+    border-image-source: var(--accentGradient);
+    border-image-slice: 0 0 7 0;
+    width: 50vw;
     margin: 0 auto;
-    background: linear-gradient(270deg,var(--mainGreen),var(--mainBlue));
   }
 
-  .post-date, .post-readtime {
-    margin: 0 2% 1% 1%;
+  .all-posts {
+    list-style-type: none;
+    padding: 3%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2% 3%;
+  }
+
+  .post-info {
+    height: 25vh;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px var(--darkText);
+    padding: 0.5% 3% 2%;
+    margin-bottom: 3%;
+    background: var(--lightBackground);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .post-item {
+    color: var(--darkText);
+  }
+
+  .post-item .post_link {
+    color: var(--darkText);
+    text-decoration-color: var(--accentSolid);
+    font-size: 1.2em;
+  }
+
+  .post_link:visited {
+    text-decoration-color: var(--lightText);
+  }
+
+  .post_link:hover {
+    color: var(--lightText);
+  }
+
+  .post_link_text {
+    font-family: var(--headerFont);
+    margin: 1% 0 0.5% 0;
+  }
+
+  .post-readtime {
+    color: var(--lightText);
+    align-self: flex-end;
+  }
+
+  .post_blurb {
+    margin: 1% 0 0 0;
+    flex-grow: 1;
+  }
+
+  @media screen and (max-width: 800px) {
+    .all-posts {
+      grid-template-columns: 1fr;
+      gap: 1%;
+    }
+  } 
+
+  @media screen and (max-width: 400px) {
+    .post-info {
+      height: auto;
+    }
+  }
+
+   @media screen and (min-width: 1200px) {
+    .post_link_text {
+      font-size: 1.9em;
+    }
+
+    .post_blurb {
+      margin: 0;
+    }
   }
 </style>

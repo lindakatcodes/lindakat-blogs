@@ -1,26 +1,23 @@
 <template>
   <Layout>
-    <main>
       <ul class="all-posts">
         <li v-for="post in $page.allPost.edges" :key="post.node.id" class="post-item">
           <article class="post-info">
             <g-link :to="post.node.path" class="post_link">
                 <h2 v-html="post.node.title" class="post_link_text"></h2>
             </g-link>
-            <span class="post-date">{{ post.node.date }}</span>
-            <span class="post-readtime">{{ post.node.timeToRead }} min. read</span>
             <p class="post_blurb">{{ post.node.description }}</p>
+            <span class="post-readtime">{{ post.node.timeToRead }} min. read</span>
           </article>
         </li>
       </ul>
-    </main>
     <Pager :info="$page.allPost.pageInfo" class="pager-styles" />
   </Layout>
 </template>
 
 <page-query>
   query Post ($page: Int) {
-    allPost (perPage: 15, page: $page) @paginate {
+    allPost (perPage: 8, page: $page) @paginate {
       totalCount
       pageInfo {
         totalPages
@@ -31,7 +28,6 @@
           id
           path
           title
-          date (format: "MMM. DD, YYYY")
           timeToRead
           description
         }
@@ -53,53 +49,55 @@
 <style>
   .all-posts {
     list-style-type: none;
-    padding: 0;
+    padding: 3%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2% 3%;
   }
 
   .post-info {
+    height: 25vh;
     border-radius: 10px;
-    box-shadow: 2px 2px 10px var(--darkGray);
+    box-shadow: 2px 2px 10px var(--darkText);
     padding: 0.5% 3% 2%;
     margin-bottom: 3%;
-    background: var(--softGray);
+    background: var(--lightBackground);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 
-  .post-item .post_link {
-    color: var(--mainBlue);
-    text-decoration-color: var(--mainGreen);
-    font-size: 1.3em;
+  .post-item {
+    color: var(--darkText);
   }
 
-  .post-item:nth-child(even) .post_link {
-    color: var(--mainGreen);
-    text-decoration-color: var(--mainBlue);
+  .post_link {
+    color: var(--darkText);
+    text-decoration-color: var(--accentSolid);
+  }
+
+  .post_link:visited {
+    text-decoration-color: var(--lightText);
+  }
+
+  .post_link:hover {
+    color: var(--lightText);
   }
 
   .post_link_text {
+    font-family: var(--headerFont);
     margin: 1% 0 0.5% 0;
-  }
-
-  .post-date {
-    color: var(--mainBlue);
-    margin: 0 2% 1% 1%;
+    font-size: 1.2em;
   }
 
   .post-readtime {
-    color: var(--mainGreen);
-    margin: 0 2% 1% 1%;
+    color: var(--lightText);
+    align-self: flex-end;
   }
 
   .post_blurb {
     margin: 1% 0 0 0;
-    padding-left: 3vw;
-    color: var(--darkGray);
-  }
-
-  .pager-styles a {
-    color: var(--darkGray);
-    font-size: 1.1em;
-    text-decoration: none;
-    padding: 2% 0.5%;
+    flex-grow: 1;
   }
 
   .pager-styles {
@@ -107,7 +105,37 @@
     justify-content: center;
   }
 
-  h2 {
-    font-family: var(--headerFont);
+  .pager-styles a {
+    color: var(--accentSolid);
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: 2% 0.5%;
+  }
+
+  .pager-styles .active {
+    color: var(--lightText);
+  }
+
+  @media screen and (max-width: 800px) {
+    .all-posts {
+      grid-template-columns: 1fr;
+      gap: 1%;
+    }
+  } 
+
+  @media screen and (max-width: 400px) {
+    .post-info {
+      height: auto;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .post_link_text {
+      font-size: 1.9em;
+    }
+
+    .post_blurb {
+      margin: 0;
+    }
   }
 </style>

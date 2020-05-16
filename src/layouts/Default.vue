@@ -1,18 +1,18 @@
 <template>
   <div class="layout">
     <header class="header">
-      
       <g-link class="title" to="/"><h1> {{ $static.metaData.siteName }} </h1></g-link>
-      
       <nav class="nav">
-        <g-link class="nav_link" to="/">All Posts</g-link>
-        <!-- <g-link class="nav_link" to="/tags">Tags</g-link> -->
+        <g-link class="nav_link" to="/" v-if="notRoot">All Posts</g-link>
+        <g-link class="nav_link" to="/tags">View by Tags</g-link>
       </nav>
       <div class="header-border"></div>
     </header>
+    <transition name="fade" appear>
     <main class="main-content">
       <slot/>
     </main>
+    </transition>
     <footer class="footer">
       <div class="footer-border"></div>
       <p class="footer-text">All posts by yours truly, LindaKat. Check out my <a href="https://www.lindakat.com" class="footer-link">portfolio</a> if you'd like to know more!</p>
@@ -28,15 +28,27 @@ query {
 }
 </static-query>
 
+<script>
+import Layout from '~/layouts/Default.vue'
+
+export default {
+  components: {
+    Layout
+  },
+  props: ['notRoot']
+};
+</script>
+
 <style>
-body {
+html, body {
   font-family: var(--bodyFont);
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  background: var(--softGray);
   font-size: 18px;
-  color: var(--darkGray);
+  min-height: 100vh;
+  background: var(--darkBackground);
+  color: var(--lightText);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -44,13 +56,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .layout {
-  max-width: 960px;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .header {
@@ -58,52 +66,70 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   align-items: center;
   flex-flow: wrap;
-  margin-bottom: 20px;
-  height: 90px;
 }
 
 .title {
-  color: var(--mainBlue);
+  color: var(--lightText);
   font-family: var(--headerFont);
   text-decoration: none;
   font-size: 1.4rem;
+  margin-left: 20px;
+}
+
+.title:hover {
+  color: var(--darkText);
 }
 
 .nav_link {
   margin-right: 20px;
   font-size: 1.3rem;
   font-family: var(--headerFont);
-  color: var(--mainGreen);
-  text-decoration-color: var(--mainBlue);
+  color: var(--lightText);
+  text-decoration-color: var(--accentSolid);
+}
+
+.nav_link:hover {
+  color: var(--darkText);
 }
 
 .header-border {
   height: 4px;
-  width: 100vw;
-  margin-top: -40px;
-  background: linear-gradient(to right,var(--mainGreen),var(--mainBlue));
+  width: 95vw;
+  margin: -40px auto 0;
+  background: var(--accentGradient);
 }
 
 .main-content {
-  flex-grow: 1;
+  flex-grow: 1 0 auto;
 }
 
 .footer {
-  font-size: 0.95em;
+  font-size: 1.1em;
   text-align: center;
-  color: var(--darkGray);
-  border-top: 2px solid linear-gradient(to left,var(--mainGreen),var(--mainBlue));
+  margin-top: 5%;
+  flex-shrink: 0;
 }
 
 .footer-link {
-  color: var(--mainBlue);
-  text-decoration-color: var(--mainGreen);
+  color: var(--accentSolid);
+  text-decoration-color: var(--lightText);
 }
 
 .footer-border {
   height: 4px;
-  background: linear-gradient(to left,var(--mainGreen),var(--mainBlue));
+  width: 95vw;
+  margin: 0 auto;
+  background: var(--accentGradient);
 }
+
+.fade-enter-active {
+  transition: opacity 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
 
 @media screen and (max-width: 500px) {
   .title {
@@ -120,6 +146,16 @@ h1, h2, h3, h4, h5, h6 {
 
   .header-border {
     margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .title {
+    font-size: 1.6em;
+  }
+
+  .nav_link {
+    font-size: 1.5em;
   }
 }
 </style>
