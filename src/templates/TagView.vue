@@ -91,16 +91,16 @@ export default {
 
   .post-item .post_link {
     color: var(--darkText);
-    text-decoration-color: var(--accentSolid);
+    text-decoration-color: var(--accentDarkSolid);
     font-size: 1.2em;
   }
 
   .post_link:visited {
-    text-decoration-color: var(--lightText);
+    text-decoration-color: var(--accentSolid);
   }
 
   .post_link:hover {
-    color: var(--lightText);
+    color: var(--accentDarkSolid);
   }
 
   .post_link_text {
@@ -109,7 +109,7 @@ export default {
   }
 
   .post-readtime {
-    color: var(--lightText);
+    color: var(--accentDarkSolid);
     align-self: flex-end;
   }
 

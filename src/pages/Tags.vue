@@ -77,20 +77,21 @@
 
   .tagLink {
     color: var(--darkText);
-    text-decoration-color: var(--accentSolid);
+    text-decoration-color: var(--accentDarkSolid);
     font-size: 1.5em;
     font-family: var(--headerFont);
   }
 
   .tagLink:visited {
-    text-decoration-color: var(--lightText);
+    text-decoration-color: var(--accentSolid);
   }
 
   .tagLink:hover {
-    color: var(--lightText);
+    color: var(--accentDarkSolid);
   }
 
   .postCount {
     margin: 0;
+    color: var(--accentDarkSolid);
   }
 </style>

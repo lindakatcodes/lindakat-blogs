@@ -144,7 +144,7 @@
   }
 
   .tag-link:hover {
-    color: var(--lightText);
+    color: var(--accentDarkSolid);
   }
   
   .post-content {

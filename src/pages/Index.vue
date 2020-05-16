@@ -73,25 +73,25 @@
 
   .post_link {
     color: var(--darkText);
-    text-decoration-color: var(--accentSolid);
+    text-decoration-color: var(--accentDarkSolid);
   }
 
   .post_link:visited {
-    text-decoration-color: var(--lightText);
+    text-decoration-color: var(--accentSolid);
   }
 
   .post_link:hover {
-    color: var(--lightText);
+    color: var(--accentDarkSolid);
   }
 
   .post_link_text {
     font-family: var(--headerFont);
     margin: 1% 0 0.5% 0;
-    font-size: 1.2em;
+    font-size: 1.5em;
   }
 
   .post-readtime {
-    color: var(--lightText);
+    color: var(--accentDarkSolid);
     align-self: flex-end;
   }
 
