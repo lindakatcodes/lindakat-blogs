@@ -115,6 +115,11 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration-color: var(--lightText);
 }
 
+.footer-link:hover {
+  color: var(--lightText);
+  text-decoration-color: var(--accentSolid);
+}
+
 .footer-border {
   height: 4px;
   width: 95vw;

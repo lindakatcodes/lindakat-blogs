@@ -101,7 +101,6 @@
     border: 4px solid;
     border-image-source: var(--accentGradient);
     border-image-slice: 0 0 7 0;
-    border-bottom: 4px solid var(--accentSolid);
   }
 
   .post-date {

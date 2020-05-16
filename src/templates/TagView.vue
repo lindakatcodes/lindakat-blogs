@@ -56,18 +56,18 @@ export default {
 <style>
   .tag-page-title {
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2.3em;
     color: var(--lightText);
+    width: 50vw;
+    margin: 0 auto;
     border: 4px solid;
     border-image-source: var(--accentGradient);
     border-image-slice: 0 0 7 0;
-    width: 50vw;
-    margin: 0 auto;
   }
 
   .all-posts {
     list-style-type: none;
-    padding: 3%;
+    padding: 0 3% 12%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2% 3%;
@@ -85,27 +85,27 @@ export default {
     flex-wrap: wrap;
   }
 
-  .post-item {
-    color: var(--darkText);
-  }
-
-  .post-item .post_link {
+  .post_link {
     color: var(--darkText);
     text-decoration-color: var(--accentDarkSolid);
-    font-size: 1.2em;
   }
 
   .post_link:visited {
-    text-decoration-color: var(--accentSolid);
+    color: var(--accentDarkSolid);
   }
 
   .post_link:hover {
     color: var(--accentDarkSolid);
   }
 
+  .post_link:visited:hover {
+    color: var(--darkText);
+  }
+
   .post_link_text {
     font-family: var(--headerFont);
     margin: 1% 0 0.5% 0;
+    font-size: 1.5em;
   }
 
   .post-readtime {
@@ -116,6 +116,7 @@ export default {
   .post_blurb {
     margin: 1% 0 0 0;
     flex-grow: 1;
+    color: var(--darkText);
   }
 
   @media screen and (max-width: 800px) {

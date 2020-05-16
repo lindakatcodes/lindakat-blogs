@@ -49,7 +49,7 @@
 <style>
   .all-posts {
     list-style-type: none;
-    padding: 3%;
+    padding: 0 3% 12%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2% 3%;
@@ -67,21 +67,21 @@
     flex-wrap: wrap;
   }
 
-  .post-item {
-    color: var(--darkText);
-  }
-
   .post_link {
     color: var(--darkText);
     text-decoration-color: var(--accentDarkSolid);
   }
 
   .post_link:visited {
-    text-decoration-color: var(--accentSolid);
+    color: var(--accentDarkSolid);
   }
 
   .post_link:hover {
     color: var(--accentDarkSolid);
+  }
+
+  .post_link:visited:hover {
+    color: var(--darkText);
   }
 
   .post_link_text {
@@ -98,11 +98,13 @@
   .post_blurb {
     margin: 1% 0 0 0;
     flex-grow: 1;
+    color: var(--darkText);
   }
 
   .pager-styles {
     display: flex;
     justify-content: center;
+    margin-top: 5%;
   }
 
   .pager-styles a {
@@ -110,6 +112,10 @@
     font-size: 1.2em;
     text-decoration: none;
     padding: 2% 0.5%;
+  }
+
+  .pager-styles a:hover {
+    color: var(--accentDarkSolid);
   }
 
   .pager-styles .active {

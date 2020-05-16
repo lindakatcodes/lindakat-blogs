@@ -43,12 +43,11 @@
   h2 {
     width: 50vw;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     margin: 0 auto;
     border: 4px solid;
     border-image-source: var(--accentGradient);
     border-image-slice: 0 0 7 0;
-    border-bottom: 4px solid var(--accentSolid);
   }
 
   .tagList {
@@ -63,7 +62,7 @@
 
   .singleTag {
     height: 11vh;
-    width: 17vw;
+    width: 20vw;
     border-radius: 10px;
     box-shadow: 2px 2px 10px var(--darkText);
     padding: 0.5% 3% 2%;
@@ -78,20 +77,45 @@
   .tagLink {
     color: var(--darkText);
     text-decoration-color: var(--accentDarkSolid);
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-family: var(--headerFont);
-  }
-
-  .tagLink:visited {
-    text-decoration-color: var(--accentSolid);
   }
 
   .tagLink:hover {
     color: var(--accentDarkSolid);
   }
 
+  .tagLink:visited {
+    color: var(--accentDarkSolid);
+  }
+
+  .tagLink:visited:hover {
+    color: var(--darkText);
+  }
+
   .postCount {
     margin: 0;
     color: var(--accentDarkSolid);
+  }
+
+  @media screen and (min-width: 1200px) {
+    h2 {
+      font-size: 2.5em;
+    }
+
+    .tagLink {
+      font-size: 1.5em;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .tagList {
+      width: 90vw;
+      gap: 4% 0;
+    }
+
+    .singleTag {
+      width: 25vw;
+    }
   }
 </style>
