@@ -170,7 +170,7 @@
   }
 
   .post-content a:hover {
-    color: var(--darkText);
+    color: var(--accentDarkSolid);
   }
 
   .post-content hr {
@@ -189,6 +189,10 @@
     gap: 50% 10%;
     align-content: space-between;
     justify-content: space-between;
+  }
+
+  .post-discuss {
+    color: var(--accentSolid);
   }
 
   .post-discuss:hover {
@@ -220,7 +224,7 @@
   }
 
   .post-link:hover {
-    color: var(--darkText);
+    color: var(--accentSolid);
   }
 
   @media screen and (max-width: 500px) {
