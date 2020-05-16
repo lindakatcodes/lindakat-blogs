@@ -1,7 +1,7 @@
 <template>
   <Layout :notRoot="true">
     <section class="tagView">
-      <h2>Post Categories:</h2>
+      <h2 class="categoriesTitle">Post Categories:</h2>
       <ul class="tagList">
         <li v-for="tag in $page.allTag.edges" :key="tag.node.id" class="singleTag">
           <g-link :to="tag.node.path" class="tagLink">{{ tag.node.title }}</g-link>
@@ -40,7 +40,7 @@
     align-items: center;
   }
 
-  h2 {
+  .categoriesTitle {
     width: 50vw;
     text-align: center;
     font-size: 2.3rem;
@@ -99,7 +99,7 @@
   }
 
   @media screen and (min-width: 1200px) {
-    h2 {
+    .categoriesTitle {
       font-size: 2.5em;
     }
 

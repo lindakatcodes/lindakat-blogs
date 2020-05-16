@@ -3,7 +3,7 @@
     <section class="post-meta">
       <h2 class="post-title"> {{ $page.post.title }} </h2>
       <p class="post-date"> {{$page.post.date }} </p>
-      <p class="post-readtime"> {{$page.post.timeToRead}} min. read</p>
+      <p class="post-readtime-single"> {{$page.post.timeToRead}} min. read</p>
       <ul class="post-tags">
         <li v-for="tag in $page.post.tags" :key="tag.id" class="tag">
           <g-link class="tag-link" :to="tag.path">#{{ tag.id }}</g-link>
@@ -110,7 +110,7 @@
     margin: 6% 0 2% 0;
   }
 
-  .post-readtime {
+  .post-readtime-single {
     grid-area: time;
     justify-self: start;
     color: var(--accentSolid);
@@ -152,7 +152,7 @@
     font-size: 18px;
   }
 
-  pre {
+  .post-content pre {
     line-height: 1.5;
     display: block;
     border-radius: 5px;
@@ -165,15 +165,15 @@
     padding: 0.25% 0.45%;
   }
 
-  a {
+  .post-content a {
     color: var(--accentSolid);
   }
 
-  a:hover {
+  .post-content a:hover {
     color: var(--darkText);
   }
 
-  hr {
+  .post-content hr {
     border: 0;
     height: 3px;
     background: var(--accentGradient);
