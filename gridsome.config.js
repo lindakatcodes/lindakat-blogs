@@ -28,7 +28,6 @@ module.exports = {
         typeName: 'Post',
         remark: {
           plugins: [
-            // ...local plugins
             [ 'gridsome-plugin-remark-shiki', {
               theme: overnightSlumber
             }]
@@ -37,7 +36,6 @@ module.exports = {
         refs: {
           tags: {
             typeName: 'Tag',
-            path: './tag/:id',
             create: true
           }
         }

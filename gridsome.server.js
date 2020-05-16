@@ -21,6 +21,7 @@ module.exports = function (api) {
             path
             title
             tags {
+              id
               title
               path
             }
@@ -50,9 +51,10 @@ module.exports = function (api) {
       const nodeTags = node.tags;
       nodeTags.forEach((tag) => {
         createPage({
-          path: '/tag/:title',
+          path: tag.path,
           component: './src/templates/TagView.vue',
           queryVariables: {
+            id: tag.id,
             title: tag.title,
             path: tag.path
           }
@@ -62,10 +64,4 @@ module.exports = function (api) {
     })
   })
 
-  api.loadSource(actions => {
-    const posts = actions.addCollection('Post')
-    const tags = actions.addCollection('Tag')
-  
-    posts.addReference('tags', 'Tag')
-  })
 }

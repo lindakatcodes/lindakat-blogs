@@ -1,27 +1,28 @@
 <template>
-    <Layout :title="this.$route.params.id">
-        <main>
-            <h1 class="tag-page-title">#{{ $route.params.id }} Posts</h1>
-            <div class="post_divider"></div>
-            <ul class="all-posts">
-              <li v-for="post in posts" :key="post.id" class="post-item">
-                <article class="post-info">
-                  <g-link :to="post.path" class="post_link">
-                    <h2 v-html="post.title" class="post_link_text"></h2>
-                  </g-link>
-                  <span class="post-date">{{ post.date }}</span>
-                  <span class="post-readtime">{{ post.timeToRead }} min. read</span>
-                  <p class="post_blurb">{{ post.description }}</p>
-                </article>
-              </li>
-            </ul>
-        </main>
-    </Layout>
+  <Layout>
+    <main>
+      <h1 class="tag-page-title">#{{ $page.tag.title }} Posts</h1>
+      <div class="post_divider"></div>
+      <ul class="all-posts">
+        <li v-for="post in posts" :key="post.id" class="post-item">
+          <article class="post-info">
+            <g-link :to="post.path" class="post_link">
+              <h2 v-html="post.title" class="post_link_text"></h2>
+            </g-link>
+            <span class="post-date">{{ post.date }}</span>
+            <span class="post-readtime">{{ post.timeToRead }} min. read</span>
+            <p class="post_blurb">{{ post.description }}</p>
+          </article>
+        </li>
+      </ul>
+    </main>
+  </Layout>
 </template>
 
 <page-query>
   query Tag ($id: String!) {
-    tag (id: $id) {
+    tag: tag (id: $id) {
+      id
       title
       belongsTo {
         edges {
@@ -45,7 +46,7 @@
 export default {
     metaInfo() {
         return {
-            title: this.$route.params.id
+            title: this.$page.tag.title
         };
     },
     computed: {

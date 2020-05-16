@@ -16,17 +16,6 @@
         id
         title
         path
-        belongsTo {
-          edges {
-            node {
-              ... on Post {
-                id
-                title
-                path
-              }
-            }
-          }
-        }
       }
     }
   }
