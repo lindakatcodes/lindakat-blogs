@@ -160,5 +160,13 @@
     .post_blurb {
       margin: 0;
     }
+
+    .all-posts {
+      padding: 0 3%;
+    }
+
+    .pager-styles {
+      margin-top: 0;
+    }
   }
 </style>

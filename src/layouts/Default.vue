@@ -58,8 +58,6 @@ h1, h2, h3, h4, h5, h6 {
 .layout {
   height: 100vh;
   display: flex;
-  /* flex-flow: row wrap; */
-  /* flex: 1 100%; */
   flex-direction: column;
   justify-content: space-between;
 }
@@ -104,6 +102,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-content {
+  margin-top: 5%;
   flex-grow: 1;
 }
 
@@ -112,7 +111,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.1em;
   text-align: center;
   margin-top: 5%;
-  /* flex-shrink: 0; */
 }
 
 .footer-link {
