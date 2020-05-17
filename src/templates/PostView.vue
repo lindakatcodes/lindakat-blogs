@@ -243,7 +243,6 @@
     }
 
     .post-content, .post-content pre {
-      margin: 0 2% 0 4%;
       width: 92%;
     }
     
