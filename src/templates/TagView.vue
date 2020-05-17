@@ -126,10 +126,16 @@ export default {
     }
   } 
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 500px) {
     .post-info {
       height: auto;
     }
+
+    .tag-page-title {
+       width: 70vw;
+       font-size: 1.8em;
+       border: none;
+     }
   }
 
    @media screen and (min-width: 1200px) {
