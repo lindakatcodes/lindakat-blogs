@@ -118,4 +118,23 @@
       width: 25vw;
     }
   }
+
+  @media screen and (max-width: 500px) {
+    .tagView {
+      margin-bottom: 50%;
+    }
+
+    .categoriesTitle {
+      font-size: 1.8em;
+    }
+
+    .tagList {
+      grid-template-columns: 1fr;
+      gap: 2%;
+    }
+
+    .singleTag {
+      width: 60vw;
+    }
+  }
 </style>

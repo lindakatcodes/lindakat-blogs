@@ -111,7 +111,7 @@
     color: var(--accentSolid);
     font-size: 1.2em;
     text-decoration: none;
-    padding: 2% 0.5%;
+    padding: 2% 1%;
   }
 
   .pager-styles a:hover {
@@ -129,9 +129,26 @@
     }
   } 
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 500px) {
     .post-info {
       height: auto;
+    }
+
+    .post_link_text {
+      font-size: 1.2em;
+    }
+
+    .post-readtime, .post_blurb {
+      font-size: 0.9em;
+    }
+
+    .pager-styles {
+      margin-top: 10%;
+    }
+
+    .pager-styles a {
+      font-size: 1.3em;
+      padding: 2% 1.5%;
     }
   }
 

@@ -229,7 +229,22 @@
 
   @media screen and (max-width: 500px) {
     .post-title {
-      font-size: 2em;
+      font-size: 1.8em;
+      border: none;
+    }
+
+    .post-meta {
+      font-size: 1em;
+      grid-column-gap: 5%;
+    }
+
+    .tag {
+      margin: 3%;
+    }
+
+    .post-content, .post-content pre {
+      margin: 0 2% 0 4%;
+      width: 92%;
     }
     
     .post-moreInfo {
@@ -238,10 +253,12 @@
                            "prev"
                            "next";
       grid-template-columns: 1fr;
+      gap: 10%;
     }
 
     .dev, .twitter, .prev-link, .next-link {
       justify-self: center;
+      font-size: 0.9em;
     }
   }
 </style>
