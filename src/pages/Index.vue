@@ -143,11 +143,13 @@
     }
 
     .pager-styles {
-      margin-top: 10%;
+      margin: 10% auto 0;
+      justify-content: space-around;
+      width: 50%;
     }
 
     .pager-styles a {
-      font-size: 1.3em;
+      font-size: 1.5em;
       padding: 2% 1.5%;
     }
   }

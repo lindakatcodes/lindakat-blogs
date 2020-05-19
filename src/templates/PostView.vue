@@ -12,8 +12,8 @@
     </section>
     <section v-html="$page.post.content" class="post-content"></section>
     <section class="post-moreInfo">
-      <a class="post-discuss dev" :href="$context.devHref" target="_blank">Discuss this post on Dev.to</a>
-      <a class="post-discuss twitter" :href="$context.twitterHref" target="_blank">Share on Twitter</a>
+      <a class="post-discuss dev" :href="$context.devHref" target="_blank" rel="noopener noreferer">Discuss this post on Dev.to</a>
+      <a class="post-discuss twitter" :href="$context.twitterHref" target="_blank" rel="noopener noreferer">Share on Twitter</a>
       <g-link class="post-link prev-link" v-if="$page.prev" :to="$page.prev.path"> ← {{ $page.prev.title }} </g-link>
       <g-link class="post-link next-link" v-if="$page.next" :to="$page.next.path"> {{ $page.next.title }} → </g-link>
     </section>
@@ -140,6 +140,7 @@
     color: var(--darkText);
     text-decoration: none;
     font-family: var(--headerFont);
+    font-size: 1.1em;
   }
 
   .tag-link:hover {
@@ -239,7 +240,7 @@
     }
 
     .tag {
-      margin: 3%;
+      margin: 3% 5%;
     }
 
     .post-content, .post-content pre {
@@ -252,12 +253,12 @@
                            "prev"
                            "next";
       grid-template-columns: 1fr;
-      gap: 10%;
+      gap: 30%;
     }
 
     .dev, .twitter, .prev-link, .next-link {
       justify-self: center;
-      font-size: 0.9em;
+      font-size: 1em;
     }
   }
 </style>

@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header {
-  height: 120px;
+  height: 125px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav_link {
   margin-right: 20px;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-family: var(--headerFont);
   color: var(--lightText);
   text-decoration-color: var(--accentSolid);
@@ -150,18 +150,21 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .title {  
-    font-size: 0.9em;
+    font-size: 1.1em;
     max-width: 95%;
     line-height: 1.2;
     margin: 0;
   }
 
   .title h1 {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
 
-  .nav_link {
-    font-size: 1.1em;
+  .nav {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
   }
 
   .nav_link:last-child {
@@ -169,12 +172,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .header-border {
-    margin-top: 10px;
+    margin-top: 15px;
   }
 
   .footer {
-    font-size: 0.9em;
-    margin-top: 25%;
+    margin-top: 30%;
   }
 }
 
