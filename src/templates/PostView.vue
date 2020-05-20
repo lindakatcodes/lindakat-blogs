@@ -45,6 +45,14 @@
   }
 </page-query>
 
+<static-query>
+  query {
+    metaData {
+      siteUrl
+    }
+  }
+</static-query>
+
 <script>
   export default {
     metaInfo() {
@@ -69,10 +77,18 @@
           {
             key: 'og:url',
             name: 'og:url',
-            content: this.$page.post.path
+            content: this.postUrl
           }
         ]
       };
+    },
+    computed: {
+      postUrl() {
+        let siteUrl = this.$static.metaData.siteUrl;
+        let postUrl = this.$page.post.path;
+
+        return `${siteUrl}${postUrl}`
+      }
     }
   };
 </script>

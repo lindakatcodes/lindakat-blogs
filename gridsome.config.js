@@ -10,6 +10,8 @@ const overnightSlumber = shiki.loadTheme('./static/overnight-slumber-italic.json
 
 module.exports = {
   siteName: 'LindaKat Blogs',
+  siteUrl: 'https://lindakat-blogs.netlify.app',
+  siteDescription: 'The writings of Linda Thompson, related to programming and life',
   transformers: {
     remark: {
       externalLinksTarget: '_blank',
