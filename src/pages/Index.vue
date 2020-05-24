@@ -73,7 +73,7 @@
 
   .pager-styles a {
     color: var(--offwhite);
-    font-size: 1.2em;
+    font-size: 1.4em;
     text-decoration: none;
     padding: 2% 1%;
   }

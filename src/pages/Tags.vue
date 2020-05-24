@@ -110,6 +110,10 @@
     .tagLink {
       font-size: 1.5em;
     }
+
+    .tagLink:hover {
+      font-size: 1.6em;
+    }
   }
 
   @media screen and (max-width: 700px) {
