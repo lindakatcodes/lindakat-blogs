@@ -52,6 +52,11 @@ export default {
     created: function() {
       let getPosts = this.$page.tag.belongsTo.edges.map(e => e.node);
       this.postData = getPosts; 
+    },
+    beforeUpdate: function() {
+      this.postData = [];
+      let getPosts = this.$page.allPost.edges.map(e => e.node);
+      this.postData = getPosts;
     }
 };
 </script>

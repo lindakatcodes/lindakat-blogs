@@ -47,6 +47,11 @@
     created: function() {
       let getPosts = this.$page.allPost.edges.map(e => e.node);
       this.postData = getPosts;
+    },
+    beforeUpdate: function() {
+      this.postData = [];
+      let getPosts = this.$page.allPost.edges.map(e => e.node);
+      this.postData = getPosts;
     }
   };
 </script>
