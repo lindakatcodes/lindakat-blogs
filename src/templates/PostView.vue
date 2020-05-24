@@ -281,7 +281,7 @@
     }
 
     .post-meta {
-      font-size: 1em;
+      font-size: 1.1em;
       grid-column-gap: 5%;
     }
 
@@ -289,8 +289,16 @@
       margin: 3% 5%;
     }
 
+    .tag-link {
+      font-size: 1.2em;
+    }
+
     .post-content, .post-content pre {
       width: 92%;
+    }
+
+    .post-content {
+      font-size: 1.1em;
     }
     
     .post-moreInfo {
@@ -304,7 +312,7 @@
 
     .dev, .twitter, .prev-link, .next-link {
       justify-self: center;
-      font-size: 1em;
+      font-size: 1.1em;
     }
   }
 </style>
