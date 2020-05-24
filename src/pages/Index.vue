@@ -1,14 +1,8 @@
 <template>
   <Layout>
       <ul class="all-posts">
-        <li v-for="post in $page.allPost.edges" :key="post.node.id" class="post-item">
-          <article class="post-info">
-            <g-link :to="post.node.path" class="post_link">
-                <h2 v-html="post.node.title" class="post_link_text"></h2>
-            </g-link>
-            <p class="post_blurb">{{ post.node.description }}</p>
-            <span class="post-readtime">{{ post.node.timeToRead }} min. read</span>
-          </article>
+        <li v-for="post in postData" :key="post.id" class="post-item">
+          <PostCard :postData="post"></PostCard>
         </li>
       </ul>
     <Pager :info="$page.allPost.pageInfo" class="pager-styles" />
@@ -38,10 +32,23 @@
 
 <script>
   import { Pager } from "gridsome";
+  import PostCard from "../components/PostCard.vue";
 
   export default {
+    data () {
+      return {
+        postData: []
+      }
+    },
     components: {
-      Pager
+      Pager,
+      PostCard
+    },
+    computed: {
+      posts() {
+        let getPosts = this.$page.allPost.edges.map(e => e.node);
+        this.postData = getPosts;
+      }
     }
   };
 </script>
@@ -55,52 +62,6 @@
     gap: 2% 3%;
   }
 
-  .post-info {
-    height: 25vh;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px var(--darkText);
-    padding: 0.5% 3% 2%;
-    margin-bottom: 3%;
-    background: var(--lightBackground);
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-
-  .post_link {
-    color: var(--darkText);
-    text-decoration-color: var(--accentDarkSolid);
-  }
-
-  .post_link:visited {
-    color: var(--accentDarkSolid);
-  }
-
-  .post_link:hover {
-    color: var(--accentDarkSolid);
-  }
-
-  .post_link:visited:hover {
-    color: var(--darkText);
-  }
-
-  .post_link_text {
-    font-family: var(--headerFont);
-    margin: 1% 0 0.5% 0;
-    font-size: 1.5em;
-  }
-
-  .post-readtime {
-    color: var(--accentDarkSolid);
-    align-self: flex-end;
-  }
-
-  .post_blurb {
-    margin: 1% 0 0 0;
-    flex-grow: 1;
-    color: var(--darkText);
-  }
-
   .pager-styles {
     display: flex;
     justify-content: center;
@@ -108,18 +69,18 @@
   }
 
   .pager-styles a {
-    color: var(--accentSolid);
+    color: var(--offwhite);
     font-size: 1.2em;
     text-decoration: none;
     padding: 2% 1%;
   }
 
   .pager-styles a:hover {
-    color: var(--accentDarkSolid);
+    color: var(--light-blue);
   }
 
   .pager-styles .active {
-    color: var(--lightText);
+    color: var(--light-yellow);
   }
 
   @media screen and (max-width: 800px) {
@@ -130,18 +91,6 @@
   } 
 
   @media screen and (max-width: 500px) {
-    .post-info {
-      height: auto;
-    }
-
-    .post_link_text {
-      font-size: 1.2em;
-    }
-
-    .post-readtime, .post_blurb {
-      font-size: 0.9em;
-    }
-
     .pager-styles {
       margin: 10% auto 0;
       justify-content: space-around;
@@ -155,14 +104,6 @@
   }
 
   @media screen and (min-width: 1200px) {
-    .post_link_text {
-      font-size: 1.9em;
-    }
-
-    .post_blurb {
-      margin: 0;
-    }
-
     .all-posts {
       padding: 0 3%;
     }

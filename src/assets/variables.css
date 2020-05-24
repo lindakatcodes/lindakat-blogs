@@ -15,4 +15,18 @@
     --accentSolid: #F3C653;
     --accentDarkSolid: #7A2452;
     --accentGradient: linear-gradient(270deg, #7A2452 0%, #F3C653 32.92%, #7A2452 65.21%, #F3C653 100%); 
+
+    --charcoal: #253237;
+    --offwhite: #F3F6F7;
+    --light-purple: #D3A9EA;
+    --light-blue: #95D9E4;
+    --light-pink: #EAA9B6;
+    --light-yellow: #F9F5AD;
+    --light-green: #9DE59A;
+    --dark-purple: #632B82;
+    --dark-blue: #2B7582;
+    --dark-pink: #BE3C57;
+    --dark-yellow: #F8E218;
+    --dark-green: #277623;
+    --gradient: linear-gradient(62.28deg, #D3A9EA 0%, #95D9E4 33.44%, #F9F5AD 68.33%, #EAA9B6 100%);
 }

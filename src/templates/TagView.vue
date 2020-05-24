@@ -3,14 +3,8 @@
     <h2 class="tag-page-title">#{{ $page.tag.title }} Posts</h2>
     <div class="post_divider"></div>
     <ul class="all-posts">
-      <li v-for="post in posts" :key="post.id" class="post-item">
-        <article class="post-info">
-          <g-link :to="post.path" class="post_link">
-            <h2 v-html="post.title" class="post_link_text"></h2>
-          </g-link>
-          <p class="post_blurb">{{ post.description }}</p>
-          <span class="post-readtime">{{ post.timeToRead }} min. read</span>
-        </article>
+      <li v-for="post in postData" :key="post.id" class="post-item">
+        <PostCard :postData="post"></PostCard>
       </li>
     </ul>
   </Layout>
@@ -39,15 +33,26 @@
 </page-query>
 
 <script>
+import PostCard from "../components/PostCard.vue";
+
 export default {
+  data () {
+      return {
+        postData: []
+      }
+    },
     metaInfo() {
         return {
             title: this.$page.tag.title
         };
     },
+    components: {
+      PostCard
+    },
     computed: {
         posts() {
-            return this.$page.tag.belongsTo.edges.map(e => e.node);
+          let getPosts = this.$page.tag.belongsTo.edges.map(e => e.node);
+          this.postData = getPosts;
         }
     }
 };
@@ -57,11 +62,11 @@ export default {
   .tag-page-title {
     text-align: center;
     font-size: 2.3em;
-    color: var(--lightText);
+    color: var(--offwhite);
     width: 50vw;
     margin: 0 auto;
     border: 4px solid;
-    border-image-source: var(--accentGradient);
+    border-image-source: var(--gradient);
     border-image-slice: 0 0 7 0;
   }
 
@@ -73,52 +78,6 @@ export default {
     gap: 2% 3%;
   }
 
-  .post-info {
-    height: 25vh;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px var(--darkText);
-    padding: 0.5% 3% 2%;
-    margin-bottom: 3%;
-    background: var(--lightBackground);
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-
-  .post_link {
-    color: var(--darkText);
-    text-decoration-color: var(--accentDarkSolid);
-  }
-
-  .post_link:visited {
-    color: var(--accentDarkSolid);
-  }
-
-  .post_link:hover {
-    color: var(--accentDarkSolid);
-  }
-
-  .post_link:visited:hover {
-    color: var(--darkText);
-  }
-
-  .post_link_text {
-    font-family: var(--headerFont);
-    margin: 1% 0 0.5% 0;
-    font-size: 1.5em;
-  }
-
-  .post-readtime {
-    color: var(--accentDarkSolid);
-    align-self: flex-end;
-  }
-
-  .post_blurb {
-    margin: 1% 0 0 0;
-    flex-grow: 1;
-    color: var(--darkText);
-  }
-
   @media screen and (max-width: 800px) {
     .all-posts {
       grid-template-columns: 1fr;
@@ -127,24 +86,10 @@ export default {
   } 
 
   @media screen and (max-width: 500px) {
-    .post-info {
-      height: auto;
-    }
-
     .tag-page-title {
        width: 70vw;
        font-size: 1.8em;
        border: none;
      }
-  }
-
-   @media screen and (min-width: 1200px) {
-    .post_link_text {
-      font-size: 1.9em;
-    }
-
-    .post_blurb {
-      margin: 0;
-    }
   }
 </style>

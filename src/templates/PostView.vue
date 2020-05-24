@@ -3,6 +3,7 @@
     <section class="post-meta">
       <h2 class="post-title"> {{ $page.post.title }} </h2>
       <p class="post-date"> {{$page.post.date }} </p>
+      <span class="symbol">♥</span>
       <p class="post-readtime-single"> {{$page.post.timeToRead}} min. read</p>
       <ul class="post-tags">
         <li v-for="tag in $page.post.tags" :key="tag.id" class="tag">
@@ -97,11 +98,11 @@
   .post-meta {
     width: 100%;
     display: grid;
-    grid-template-areas: "title title"
-                          "date time"
-                          "tags tags";
+    grid-template-areas: "title title title"
+                          "date symbol time"
+                          "tags tags tags";
     grid-column-gap: 3%;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 0.15fr 1fr;
     justify-content: center;
     justify-items: center;
     font-size: 1.1em;
@@ -109,27 +110,34 @@
 
   .post-title {
     grid-area: title;
-    color: var(--lightText);
+    color: var(--offwhite);
     font-size: 2.5em;
     margin-bottom: 0;
     font-family: var(--headerFont);
     text-align: center;
     border: 4px solid;
-    border-image-source: var(--accentGradient);
+    border-image-source: var(--gradient);
     border-image-slice: 0 0 7 0;
   }
 
   .post-date {
     grid-area: date;
     justify-self: end;
-    color: var(--lightText);
+    color: var(--light-purple);
     margin: 6% 0 2% 0;
+  }
+
+  .symbol {
+    grid-area: symbol;
+    color: var(--light-pink);
+    align-self: center;
+    font-size: 1.2em;
   }
 
   .post-readtime-single {
     grid-area: time;
     justify-self: start;
-    color: var(--accentSolid);
+    color: var(--light-blue);
     margin: 6% 0 2% 0;
   }
 
@@ -148,25 +156,44 @@
   .tag {
     padding: 0 3%;
     margin: 1% 1.5%;
-    background: var(--lightBackground);
+    background: var(--dark-purple);
     border-radius: 5px;
   }
 
+  .tag:nth-child(even) {
+    background: var(--dark-blue);
+  }
+
   .tag-link {
-    color: var(--darkText);
+    color: var(--offwhite);
     text-decoration: none;
     font-family: var(--headerFont);
     font-size: 1.1em;
+    transition: font-size 0.2s ease-in-out;
   }
 
   .tag-link:hover {
-    color: var(--accentDarkSolid);
+    color: var(--charcoal);
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.2em;
+    transition: font-size 0.2s ease-in-out;
   }
   
   .post-content {
     margin: 0 auto;
     max-width: 620px;
     font-size: 18px;
+  }
+
+  .post-content h2 {
+    color: var(--light-yellow);
+  }
+
+  .post-content h3 {
+    color: var(--light-green);
   }
 
   .post-content pre {
@@ -183,17 +210,18 @@
   }
 
   .post-content a {
-    color: var(--accentSolid);
+    color: var(--light-pink);
+    text-decoration-color: var(--light-yellow);
   }
 
   .post-content a:hover {
-    color: var(--accentDarkSolid);
+    color: var(--light-blue);
   }
 
   .post-content hr {
     border: 0;
     height: 3px;
-    background: var(--accentGradient);
+    background: var(--gradient);
   }
 
   .post-moreInfo {
@@ -209,11 +237,12 @@
   }
 
   .post-discuss {
-    color: var(--accentSolid);
+    color: var(--light-purple);
+    text-decoration-color: var(--light-yellow);
   }
 
   .post-discuss:hover {
-    color: var(--lightText);
+    color: var(--light-blue);
   }
 
   .dev {
@@ -237,11 +266,12 @@
   }
 
   .post-link {
-    color: var(--lightText);
+    color: var(--light-pink);
+    text-decoration-color: var(--light-yellow);
   }
 
   .post-link:hover {
-    color: var(--accentSolid);
+    color: var(--light-green);
   }
 
   @media screen and (max-width: 500px) {

@@ -21,11 +21,11 @@
 </template>
 
 <static-query>
-query {
-  metaData {
-    siteName
+  query {
+    metaData {
+      siteName
+    }
   }
-}
 </static-query>
 
 <script>
@@ -47,8 +47,8 @@ html, body {
   line-height: 1.25;
   font-size: 18px;
   min-height: 100vh;
-  background: var(--darkBackground);
-  color: var(--lightText);
+  background: var(--charcoal);
+  color: var(--offwhite);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .title {
-  color: var(--lightText);
+  color: var(--offwhite);
   font-family: var(--headerFont);
   text-decoration: none;
   font-size: 1.4rem;
@@ -79,26 +79,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .title:hover {
-  color: var(--darkText);
+  color: var(--light-purple);
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .nav_link {
   margin-right: 20px;
   font-size: 1.5rem;
   font-family: var(--headerFont);
-  color: var(--lightText);
-  text-decoration-color: var(--accentSolid);
+  color: var(--light-blue);
+  text-decoration-color: var(--light-yellow);
 }
 
 .nav_link:hover {
-  color: var(--darkText);
+  color: var(--light-purple);
 }
 
 .header-border {
   height: 4px;
   width: 95vw;
   margin: -40px auto 0;
-  background: var(--accentGradient);
+  background: var(--gradient);
 }
 
 .main-content {
@@ -114,20 +118,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-link {
-  color: var(--accentSolid);
-  text-decoration-color: var(--lightText);
+  color: var(--light-purple);
+  text-decoration-color: var(--light-yellow);
 }
 
 .footer-link:hover {
-  color: var(--lightText);
-  text-decoration-color: var(--accentSolid);
+  color: var(--light-green);
+  /* text-decoration-color: var(--accentSolid); */
 }
 
 .footer-border {
   height: 4px;
   width: 95vw;
   margin: 0 auto;
-  background: var(--accentGradient);
+  background: var(--gradient);
 }
 
 .fade-enter-active {
