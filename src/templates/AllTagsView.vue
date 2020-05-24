@@ -93,6 +93,7 @@ export default {
        width: 70vw;
        font-size: 1.8em;
        border: none;
+       margin-top: 10%;
      }
   }
 </style>

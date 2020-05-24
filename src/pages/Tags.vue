@@ -130,7 +130,6 @@
 
     .categoriesTitle {
       font-size: 1.8em;
-      margin-top: 10%;
     }
 
     .tagList {
