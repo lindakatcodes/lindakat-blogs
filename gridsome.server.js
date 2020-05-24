@@ -55,7 +55,7 @@ module.exports = function (api) {
       nodeTags.forEach((tag) => {
         createPage({
           path: tag.path,
-          component: './src/templates/TagView.vue',
+          component: './src/templates/AllTagsView.vue',
           queryVariables: {
             id: tag.id,
             title: tag.title,
