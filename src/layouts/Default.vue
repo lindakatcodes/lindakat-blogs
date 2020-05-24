@@ -158,6 +158,11 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 95%;
     line-height: 1.2;
     margin: 0;
+    color: var(--light-purple);
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .title h1 {

@@ -102,7 +102,7 @@
 
     .pager-styles a {
       font-size: 1.5em;
-      padding: 2% 1.5%;
+      padding: 3% 2.5%;
     }
   }
 

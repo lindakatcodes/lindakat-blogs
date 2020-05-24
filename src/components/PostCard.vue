@@ -29,7 +29,7 @@
   }
 
   .post_link {
-    color: var(--light-purple);
+    color: var(--light-blue);
     text-decoration-color: var(--light-yellow);
   }
 
@@ -38,7 +38,7 @@
   }
 
   .post_link:visited {
-    color: var(--light-pink);
+    color: var(--light-purple);
   }
 
   .post_link:visited:hover {
@@ -52,7 +52,7 @@
   }
 
   .post-readtime {
-    color: var(--light-blue);
+    color: var(--light-pink);
   }
 
   .post_blurb {
@@ -72,13 +72,9 @@
     .post-info {
       height: auto;
     }
-
-    .post_link_text {
-      font-size: 1.2em;
-    }
-
+    
     .post-readtime, .post_blurb {
-      font-size: 0.9em;
+      font-size: 1.1em;
     }
   }
 
