@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[LindaKat's Tech Blog]]></title><description><![CDATA[LindaKat's Tech Blog]]></description><link>https://lindakat-blogs.netlify.com</link><generator>RSS for Node</generator><lastBuildDate>Tue, 05 May 2020 07:18:33 GMT</lastBuildDate><atom:link href="https://lindakat-blogs.netlify.com/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[100 Days of Code - R2D17]]></title><description><![CDATA[Today was all about getting started with testing Node! Specifically, we're going to be testing the task manager app we've been creating as part of [a Udemy course on learning Nodejs](https://www.udemy.com/the-complete-nodejs-developer-course-2/).
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[LindaKat's Tech Blog]]></title><description><![CDATA[LindaKat's Tech Blog]]></description><link>https://lindakat-blogs.netlify.com</link><generator>RSS for Node</generator><lastBuildDate>Sun, 24 May 2020 07:45:29 GMT</lastBuildDate><atom:link href="https://lindakat-blogs.netlify.com/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[100 Days of Code - R2D17]]></title><description><![CDATA[Today was all about getting started with testing Node! Specifically, we're going to be testing the task manager app we've been creating as part of [a Udemy course on learning Nodejs](https://www.udemy.com/the-complete-nodejs-developer-course-2/).
 
 Tonight, all I really got through was installing our testing suite (we're using Jest), and then writing a few simple tests not related to our project, to start to get a feel for how it works.
 
@@ -40,101 +40,7 @@ api.chainWebpack(config => { config.mode('development') });
 After saving and running the develop command again, everything still works! And when I stopped the server, moved one of my comment tags in the problem file from before, and tried to run develop again, I got the error message when it failed to build! 
 
 So now, should I have future errors in my files, I'll be able to actually see the error messages, which will help **A LOT** in trouble shooting! 🙌 Hooray for learning new things!
-]]></description><link>https://lindakat-blogs.netlify.com/posts/100-days-of-code-r2d18-19</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/100-days-of-code-r2d18-19</guid><category><![CDATA[Gridsome]]></category><category><![CDATA[100DaysOfCode]]></category><category><![CDATA[learning]]></category><pubDate>Fri, 19 Jul 2019 02:51:05 GMT</pubDate></item><item><title><![CDATA[100DaysOfCode R2D27 - Rockin' (Web)Sockets!]]></title><description><![CDATA[I started the last project in my [Node course](https://www.udemy.com/the-complete-nodejs-developer-course-2/) - a chat app! I did the groundwork videos yesterday - getting libraries installed and new files/directories set up.
-
-Tonight, I started getting into the actual code. For this project, the main library we're using is [Socket.io](socket.io), which has been really cool so far! It's got me learning a little bit about web sockets, which is a term I've heard before but haven't really paid attention to. 
-
-To my understanding - web sockets are an upgrade to HTTP request/response patterns. They create a connection between a server and a client (or multiple clients!), and keep that connection open so that both sides can send data to each other even faster than you're able to with standard requests. I don't fully understand **HOW** it does this - just that it does. 
-
-Socket.io builds on top of this, providing some nice API magic to make it even easier to work with server/client connections. What's really been cool to me is that it's centered around sending (emitting) custom events - so you can name your events anything you want! And then you can send along whatever data you want with it, and just set the other side to listen for that custom event. (It does have a few built ins as well, like connection and disconnect.)
-
-Let me share a simple example we worked on to play around with this. This will show us a basic counter value - then once a button is clicked, it will update the value and show us the new value.
-
-We started with an index.js file (our server file), which is running an Express app. (The io word you see is the variable that's set to our Express server, which socket.io is controlling.) In this file, we set up a variable for a counter, and then when a new client-side connection comes in, we send (emit) a custom named event, and the current value of our count variable. 
-
-```js
-let count = 0;
-```
-
-```js
-io.on('connection', (socket) => {   socket.emit('countUpdated', count); })
-```
-
-The _socket.emit_ phrase is the key - that's what sends the data off to our client / browser side of things. 
-
-On our client, we set up a listener function that listens for the custom event name we just created. When it detects that event being sent, it grabs the data that was sent along with it, and does something with it (in this example, just logs it to the console). (I should note - socket, in this instance, is also a variable defined in our file, which accesses the server we've got running.)
-
-```js
-socket.on('countUpdated', (count) => {   console.log('The count has been updated!', count) })
-```
-
-So now, when we first connect, our server is calling an event and sending the initial value of count, and our client is picking that event up and logging the value to the console. 
-
-Then, if we click a button (which is set up in an html file) on the client side of things, we want to increase the value of count. So we grab the button click event in our client file, and fire off an event to our server, to signify the button was clicked. Again, the name of our event is custom - it could be called whatever! It just has to match on both sides.
-
-```js
-document.querySelector('#btnIncrease')  .addEventListener('click', () => {    socket.emit('increment') })
-```
-
-Once our server detects this event, we then want to increase the value of count, and send that first event back with the new count value. (This little call takes place inside the `io.on('connection')` call we did earlier.)
-
-```js
-socket.on('increment', () => { count++; io.emit('countUpdated', count) })
-```
-
-And that's it! Now when we first open the browser to our site, we get a message with the initial count value. And each time we click the button on the page, our client side detects the button click, sends an event to our server, adds 1 to the counter, and the server sends the new value back to the client! 
-
-You might have noticed that sometimes I used `socket.emit`, and sometimes `io.emit`. There's 3 basic ideas / use cases that were introduced in the course (so far):
-
-* **socket.emit** - The socket keyword ties to a specific client, so it'll send events only to that particular client.
-* **io.emit** - Using the io keyword will send the events to all active, connected clients
-* **socket.broadcast.emit** - This isn't in the examples above, but this will send an event to all connected clients **EXCEPT** the specific client you're in (we use this in the course for when a user logs in or out - you want others to see that a new user has joined or left, but you yourself don't need to see when you joined a chat!)
-
-It's been really fun tonight, building out the core functionality for our app. It takes so little code to send and receive information on both ends of the app! It's boggling my mind. 🤯 I'm excited to get back to it, and keep working on this project! I already have ideas for how I'd like to use this information. 😊
-]]></description><link>https://lindakat-blogs.netlify.com/posts/100daysofcode-r2d27-rockin-web-sockets</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/100daysofcode-r2d27-rockin-web-sockets</guid><category><![CDATA[100DaysOfCode]]></category><category><![CDATA[nodeCourse]]></category><pubDate>Wed, 31 Jul 2019 05:29:23 GMT</pubDate></item><item><title><![CDATA[Do I Own This? A New Project!]]></title><description><![CDATA[I have this very first world problem. 
-
-You see, I love nail polish. Can't get enough. And so, most times when I'm at the store, I browse through the polish to see if anything is speaking to me. 
-
-The problem is, I often see colors that I like - but I have so many at home, that I can't remember the names of them all! And so every time, without fail, I wonder - "Do I own this"? 
-
-I do this with shirts, too - I'm a fan of basic, solid colors of shirts, but can never remember which colors I already have when I'm out at the store. I try to remember to take a picture of my closet before I leave, but almost always forget, or eventually lose the photo or don't update it once I buy new things.
-
-So! I want to make an app that can help me quickly & easily check when I'm at the store, and never have to not buy something because I can't remember if I already own it or not. 
-
-I have a few ideas on this, but I'm still uncertain on how I want to do things. So this is a bit of a brainstorming session, in the hopes that I either make some decisions and/or can get some advice. 😊
-
-<hr>
-
-## **UI Factors**
-
-For the main page, I want to keep it simple. I'm envisioning a nice, clean grid, that just shows color swatches of each color. Rounded corners, probably, because I love rounded corners and think it looks a bit more polished that way. (HA! What a punny joke. Sorry, I couldn't resist.)
-
-I'll need to have a search/filter bar somewhere, so that I can view just a particular shade or brand if desired. I can't decide if I want this to always be visible, or if it should be behind a little menu option? I'm leaning towards always visible as I think that's both more accessible & faster - but I can't see it in my mind's eye. I want the color grid to be the most obvious, visible thing, but I think a filter bar should be on the top if it's going to be visible all the time. Maybe I can make a little side tray that comes in and out when needed? I don't know. Both would look nice, but I can't see this part in my mind yet. 
-
-Then I want a way, when a particular color is clicked, to show it's name, brand, color group, etc. Normally when I'm at the store, I'm looking at a particular brand at a time, so if I can filter my view to just that brand it's often easy to get an idea of if I've got a particular color or not. Then I can click on it to verify before I write it off. Or I can filter by color group, so I can decide if I've already got enough purple shades (I do) or if the shade that's calling to me is missing from my group. I don't think the color's name or brand needs to be visible on the main view, but it needs to be easily accessible for verification purposes. Hmmm...or maybe I can fit the color name underneath each swatch? I don't know, some of these names are weird and long and I don't know that they'll fit nicely. 
-
-Lastly, I'll need a way to add new colors, so I can keep my collection updated. This can definitely be stowed away in a menu, or in a small button somewhere. A simple form for filling in the information will work, then it'll need a way to upload a picture. I'll have to think on the pictures, as I'll want them to stay as uniform as possible, but that will really be up to the person taking the pictures (me). 
-
-<hr>
-
-## **Back-end Factors**
-
-This is where I'm struggling the most. I'll definitely need a database to store all of this data. But I'm trying to think now about how it might be used in the future - and I think it's possible, if I can get the UI stuff down, that others might want to use this as well. So I want to consider writing this in a way that it can be hosted somewhere, and a database can be kept up. Which is not something I've really had to deal with on any projects I've done so far. 
-
-Everything so far has just been for me, so it's been hosted on Heroku or a Github page. And if I've needed a database I've used a MongoDB free cluster and just tinkered around, or I've used a JSON file. Which, I could probably set it up to use a JSON file - I know it's easy and fast to pull the data from, & I'm sure I could work out how to write the data to it so that it stays clean and organized. It would be personal for each person who uses it, which (since I don't intend to add any shared items) would be fine, but then each person would have to store the site somewhere on their own.  
-
-However, it feels like I should use a legit database for this, where each person can just have their own collection stored. Plus, more real world practice for me! But I don't have much real experience with actual databases, in a production sense. I don't have the funds to pay for a lot of data storage (on the off chance this somehow turns out amazing and goes viral), but I don't think there's much that's really free in terms of data storage or server options. So I'm not really sure where to go with this. 
-
-It might honestly be worth it to only worry about myself for now, and host it on Heroku with either a JSON file or a MongoDB cluster. For my own data, it'll be free, which is a big concern at the moment. But I would like to consider releasing this for the public in the future, if I can get this really finished. So I want to think about how I can set it up so that, even if I do it just for me for now, it'll be relatively easy to be able to expand the hosting. I don't want to completely rewrite anything if I can help it!
-
-I'm also concerned, if I'm able to push it live to others, about it responsibly using data & phone storage - since mobile will be a main use case. So I'll have to look into that, as well. This, along with collections potentially being large, is a main factor that keeps me from considering something like local storage for the database. Plus, the data will need to persist so someone's collection doesn't just disappear, and I don't think local storage is the best option for that.
-
-<hr>
-
-Alright, so the idea is out there! Now to actually build the dang thing. 😎
-
-If anyone has any suggestions, please reach out & let me know! Especially if you've got thoughts on the back-end part of this, which is what's holding me back the most! It's entirely possible I'm way overthinking this, and should just focus on building for me and getting a working version up before I worry too much about the world at large. But I'd love to hear your thoughts on anything I've mentioned here! I intend to write about my process as I go along, so this is just the beginning. 💅
-]]></description><link>https://lindakat-blogs.netlify.com/posts/do-i-own-this-a-new-project</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/do-i-own-this-a-new-project</guid><category><![CDATA[doIOwnThis]]></category><category><![CDATA[personal]]></category><pubDate>Wed, 19 Feb 2020 04:45:14 GMT</pubDate></item><item><title><![CDATA[AoC (Advent of Code) - 2019 Day 1!]]></title><description><![CDATA[Advent of Code is finally here, and I'm so excited!! This is such a fun code challenge, and I was really bummed when I couldn't keep up with it last year, so I'm determined to stay on it this year and follow through until the end!
+]]></description><link>https://lindakat-blogs.netlify.com/posts/100-days-of-code-r2d18-19</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/100-days-of-code-r2d18-19</guid><category><![CDATA[Gridsome]]></category><category><![CDATA[100DaysOfCode]]></category><category><![CDATA[learning]]></category><pubDate>Fri, 19 Jul 2019 02:51:05 GMT</pubDate></item><item><title><![CDATA[AoC (Advent of Code) - 2019 Day 1!]]></title><description><![CDATA[Advent of Code is finally here, and I'm so excited!! This is such a fun code challenge, and I was really bummed when I couldn't keep up with it last year, so I'm determined to stay on it this year and follow through until the end!
 
 <details>
 <summary>**Spoilers will follow from here on out** - avoid until you've solved the problems if you want! Click the arrow to view.</summary>
@@ -227,7 +133,116 @@ Part of this year's new changes on the official subreddit is a poem contest! Eac
 > Don't be afraid
 >
 > Elves will guide the way!
-]]></description><link>https://lindakat-blogs.netlify.com/posts/aoc-advent-of-code-2019-day-1</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/aoc-advent-of-code-2019-day-1</guid><category><![CDATA[AoC]]></category><category><![CDATA[adventOfCode]]></category><pubDate>Sun, 01 Dec 2019 07:24:50 GMT</pubDate></item><item><title><![CDATA[Inside My Head Right Now]]></title><description><![CDATA[**I'm gonna be real with you - I've been struggling the past few days.** 
+]]></description><link>https://lindakat-blogs.netlify.com/posts/aoc-advent-of-code-2019-day-1</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/aoc-advent-of-code-2019-day-1</guid><category><![CDATA[AoC]]></category><category><![CDATA[adventOfCode]]></category><pubDate>Sun, 01 Dec 2019 07:24:50 GMT</pubDate></item><item><title><![CDATA[100DaysOfCode R2D27 - Rockin' (Web)Sockets!]]></title><description><![CDATA[I started the last project in my [Node course](https://www.udemy.com/the-complete-nodejs-developer-course-2/) - a chat app! I did the groundwork videos yesterday - getting libraries installed and new files/directories set up.
+
+Tonight, I started getting into the actual code. For this project, the main library we're using is [Socket.io](socket.io), which has been really cool so far! It's got me learning a little bit about web sockets, which is a term I've heard before but haven't really paid attention to.
+
+To my understanding - web sockets are an upgrade to HTTP request/response patterns. They create a connection between a server and a client (or multiple clients!), and keep that connection open so that both sides can send data to each other even faster than you're able to with standard requests. I don't fully understand **HOW** it does this - just that it does.
+
+Socket.io builds on top of this, providing some nice API magic to make it even easier to work with server/client connections. What's really been cool to me is that it's centered around sending (emitting) custom events - so you can name your events anything you want! And then you can send along whatever data you want with it, and just set the other side to listen for that custom event. (It does have a few built ins as well, like connection and disconnect.)
+
+Let me share a simple example we worked on to play around with this. This will show us a basic counter value - then once a button is clicked, it will update the value and show us the new value.
+
+We started with an index.js file (our server file), which is running an Express app. (The io word you see is the variable that's set to our Express server, which socket.io is controlling.) In this file, we set up a variable for a counter, and then when a new client-side connection comes in, we send (emit) a custom named event, and the current value of our count variable.
+
+```js
+let count = 0;
+```
+
+```js
+io.on('connection', (socket) => {   socket.emit('countUpdated', count); })
+```
+
+The _socket.emit_ phrase is the key - that's what sends the data off to our client / browser side of things.
+
+On our client, we set up a listener function that listens for the custom event name we just created. When it detects that event being sent, it grabs the data that was sent along with it, and does something with it (in this example, just logs it to the console). (I should note - socket, in this instance, is also a variable defined in our file, which accesses the server we've got running.)
+
+```js
+socket.on('countUpdated', (count) => {   console.log('The count has been updated!', count) })
+```
+
+So now, when we first connect, our server is calling an event and sending the initial value of count, and our client is picking that event up and logging the value to the console.
+
+Then, if we click a button (which is set up in an html file) on the client side of things, we want to increase the value of count. So we grab the button click event in our client file, and fire off an event to our server, to signify the button was clicked. Again, the name of our event is custom - it could be called whatever! It just has to match on both sides.
+
+```js
+document.querySelector('#btnIncrease')  .addEventListener('click', () => {    socket.emit('increment') })
+```
+
+Once our server detects this event, we then want to increase the value of count, and send that first event back with the new count value. (This little call takes place inside the `io.on('connection')` call we did earlier.)
+
+```js
+socket.on('increment', () => { count++; io.emit('countUpdated', count) })
+```
+
+And that's it! Now when we first open the browser to our site, we get a message with the initial count value. And each time we click the button on the page, our client side detects the button click, sends an event to our server, adds 1 to the counter, and the server sends the new value back to the client!
+
+You might have noticed that sometimes I used `socket.emit`, and sometimes `io.emit`. There's 3 basic ideas / use cases that were introduced in the course (so far):
+
+* **socket.emit** - The socket keyword ties to a specific client, so it'll send events only to that particular client.
+* **io.emit** - Using the io keyword will send the events to all active, connected clients
+* **socket.broadcast.emit** - This isn't in the examples above, but this will send an event to all connected clients **EXCEPT** the specific client you're in (we use this in the course for when a user logs in or out - you want others to see that a new user has joined or left, but you yourself don't need to see when you joined a chat!)
+
+It's been really fun tonight, building out the core functionality for our app. It takes so little code to send and receive information on both ends of the app! It's boggling my mind. 🤯 I'm excited to get back to it, and keep working on this project! I already have ideas for how I'd like to use this information. 😊
+]]></description><link>https://lindakat-blogs.netlify.com/posts/100daysofcode-r2d27-rockin-web-sockets</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/100daysofcode-r2d27-rockin-web-sockets</guid><category><![CDATA[100DaysOfCode]]></category><category><![CDATA[nodeCourse]]></category><pubDate>Wed, 31 Jul 2019 05:29:23 GMT</pubDate></item><item><title><![CDATA[Do I Own This? A New Project!]]></title><description><![CDATA[I have this very first world problem. 
+
+You see, I love nail polish. Can't get enough. And so, most times when I'm at the store, I browse through the polish to see if anything is speaking to me. 
+
+The problem is, I often see colors that I like - but I have so many at home, that I can't remember the names of them all! And so every time, without fail, I wonder - "Do I own this"? 
+
+I do this with shirts, too - I'm a fan of basic, solid colors of shirts, but can never remember which colors I already have when I'm out at the store. I try to remember to take a picture of my closet before I leave, but almost always forget, or eventually lose the photo or don't update it once I buy new things.
+
+So! I want to make an app that can help me quickly & easily check when I'm at the store, and never have to not buy something because I can't remember if I already own it or not. 
+
+I have a few ideas on this, but I'm still uncertain on how I want to do things. So this is a bit of a brainstorming session, in the hopes that I either make some decisions and/or can get some advice. 😊
+
+<hr>
+
+## **UI Factors**
+
+For the main page, I want to keep it simple. I'm envisioning a nice, clean grid, that just shows color swatches of each color. Rounded corners, probably, because I love rounded corners and think it looks a bit more polished that way. (HA! What a punny joke. Sorry, I couldn't resist.)
+
+I'll need to have a search/filter bar somewhere, so that I can view just a particular shade or brand if desired. I can't decide if I want this to always be visible, or if it should be behind a little menu option? I'm leaning towards always visible as I think that's both more accessible & faster - but I can't see it in my mind's eye. I want the color grid to be the most obvious, visible thing, but I think a filter bar should be on the top if it's going to be visible all the time. Maybe I can make a little side tray that comes in and out when needed? I don't know. Both would look nice, but I can't see this part in my mind yet. 
+
+Then I want a way, when a particular color is clicked, to show it's name, brand, color group, etc. Normally when I'm at the store, I'm looking at a particular brand at a time, so if I can filter my view to just that brand it's often easy to get an idea of if I've got a particular color or not. Then I can click on it to verify before I write it off. Or I can filter by color group, so I can decide if I've already got enough purple shades (I do) or if the shade that's calling to me is missing from my group. I don't think the color's name or brand needs to be visible on the main view, but it needs to be easily accessible for verification purposes. Hmmm...or maybe I can fit the color name underneath each swatch? I don't know, some of these names are weird and long and I don't know that they'll fit nicely. 
+
+Lastly, I'll need a way to add new colors, so I can keep my collection updated. This can definitely be stowed away in a menu, or in a small button somewhere. A simple form for filling in the information will work, then it'll need a way to upload a picture. I'll have to think on the pictures, as I'll want them to stay as uniform as possible, but that will really be up to the person taking the pictures (me). 
+
+<hr>
+
+## **Back-end Factors**
+
+This is where I'm struggling the most. I'll definitely need a database to store all of this data. But I'm trying to think now about how it might be used in the future - and I think it's possible, if I can get the UI stuff down, that others might want to use this as well. So I want to consider writing this in a way that it can be hosted somewhere, and a database can be kept up. Which is not something I've really had to deal with on any projects I've done so far. 
+
+Everything so far has just been for me, so it's been hosted on Heroku or a Github page. And if I've needed a database I've used a MongoDB free cluster and just tinkered around, or I've used a JSON file. Which, I could probably set it up to use a JSON file - I know it's easy and fast to pull the data from, & I'm sure I could work out how to write the data to it so that it stays clean and organized. It would be personal for each person who uses it, which (since I don't intend to add any shared items) would be fine, but then each person would have to store the site somewhere on their own.  
+
+However, it feels like I should use a legit database for this, where each person can just have their own collection stored. Plus, more real world practice for me! But I don't have much real experience with actual databases, in a production sense. I don't have the funds to pay for a lot of data storage (on the off chance this somehow turns out amazing and goes viral), but I don't think there's much that's really free in terms of data storage or server options. So I'm not really sure where to go with this. 
+
+It might honestly be worth it to only worry about myself for now, and host it on Heroku with either a JSON file or a MongoDB cluster. For my own data, it'll be free, which is a big concern at the moment. But I would like to consider releasing this for the public in the future, if I can get this really finished. So I want to think about how I can set it up so that, even if I do it just for me for now, it'll be relatively easy to be able to expand the hosting. I don't want to completely rewrite anything if I can help it!
+
+I'm also concerned, if I'm able to push it live to others, about it responsibly using data & phone storage - since mobile will be a main use case. So I'll have to look into that, as well. This, along with collections potentially being large, is a main factor that keeps me from considering something like local storage for the database. Plus, the data will need to persist so someone's collection doesn't just disappear, and I don't think local storage is the best option for that.
+
+<hr>
+
+Alright, so the idea is out there! Now to actually build the dang thing. 😎
+
+If anyone has any suggestions, please reach out & let me know! Especially if you've got thoughts on the back-end part of this, which is what's holding me back the most! It's entirely possible I'm way overthinking this, and should just focus on building for me and getting a working version up before I worry too much about the world at large. But I'd love to hear your thoughts on anything I've mentioned here! I intend to write about my process as I go along, so this is just the beginning. 💅
+]]></description><link>https://lindakat-blogs.netlify.com/posts/do-i-own-this-a-new-project</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/do-i-own-this-a-new-project</guid><category><![CDATA[doIOwnThis]]></category><category><![CDATA[personal]]></category><pubDate>Wed, 19 Feb 2020 04:45:14 GMT</pubDate></item><item><title><![CDATA[Hello, World!]]></title><description><![CDATA[## Welcome to my new blog!
+
+This project got started because I wanted to start writing more tech-related posts. Twitter doesn't give me enough characters, and my other sites just didn't feel quite right. I'd been wanting to dip my toes into learning some actual frameworks, and since I had a long weekend - I decided to do some quick research and see what sounded good!
+
+I knew I wanted to learn Vue when I was ready, so I focused on that pretty quickly. And I knew I wanted something I could host on Netlify, since it's done well for me so far, and I could do it for free - so that meant whatever CMS I was going to use had to be online and likely server-less. I pretty quickly found Netlify CMS, and decided to give Gridsome a try. I hear so much about Gatsby, and Gridsome is meant to be very similar, just written around Vue. Alright - frameworks picked!
+
+I still know next to NOTHING about either of them (and now I've got GraphQL in the mix as well, as the database language), but I was able to figure out enough to get some basic styling done, and get all the details of the posts I wanted visible to show up. It took a lot of trial and error, but somehow I've managed it! There's still a lot to learn, but I've still got improvements I want to make, so I'll be digging in every so often to improve things around here.
+
+For now - what can you expect to find here? I intend to write about a few things: 
+
+* 100 Days of Code logs - more detailed than what I can write on Twitter
+* Learning guides - how I got through difficult challenges
+* Miscellaneous struggles and successes related to learning to code & job hunting
+
+So - welcome along on the journey! I'll write a bit more about the challenges I've faced so far getting this blog set up soon, and the 100 Days posts should start tomorrow. For now - have a great night, and I'll see ya'll again soon!
+]]></description><link>https://lindakat-blogs.netlify.com/posts/hello-world</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/hello-world</guid><category><![CDATA[personal]]></category><category><![CDATA[behindTheScenes]]></category><pubDate>Mon, 08 Jul 2019 05:50:55 GMT</pubDate></item><item><title><![CDATA[Inside My Head Right Now]]></title><description><![CDATA[**I'm gonna be real with you - I've been struggling the past few days.** 
 
 I'm learning to code as a second career. So far in my life, I've only worked as retail associates, customer service roles, or admin assistant spots. Nothing code-specific yet. 
 
@@ -291,22 +306,7 @@ Though I could maybe work in a double tap / hold functionality to the space wher
 I would also really like a nicer way to keep track of the inks....still trying to decide on the best way to do that. It's basically eye balled each time a die box gets filled, so it's not an exact, pre-filled amount that goes into each one. Which makes keeping track of how much is used a bit more difficult. 
 
 Clearly I have some more thinking to do! First task is to get it so I can actually view the site and access the database at all. Then I can make a decision on the schema so I can start putting actual data into it! 😊
-]]></description><link>https://lindakat-blogs.netlify.com/posts/stamp-inventory-refactor-part-1</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/stamp-inventory-refactor-part-1</guid><category><![CDATA[stampInventory]]></category><pubDate>Wed, 06 Nov 2019 06:30:53 GMT</pubDate></item><item><title><![CDATA[Hello, World!]]></title><description><![CDATA[## Welcome to my new blog!
-
-This project got started because I wanted to start writing more tech-related posts. Twitter doesn't give me enough characters, and my other sites just didn't feel quite right. I'd been wanting to dip my toes into learning some actual frameworks, and since I had a long weekend - I decided to do some quick research and see what sounded good!
-
-I knew I wanted to learn Vue when I was ready, so I focused on that pretty quickly. And I knew I wanted something I could host on Netlify, since it's done well for me so far, and I could do it for free - so that meant whatever CMS I was going to use had to be online and likely server-less. I pretty quickly found Netlify CMS, and decided to give Gridsome a try. I hear so much about Gatsby, and Gridsome is meant to be very similar, just written around Vue. Alright - frameworks picked!
-
-I still know next to NOTHING about either of them (and now I've got GraphQL in the mix as well, as the database language), but I was able to figure out enough to get some basic styling done, and get all the details of the posts I wanted visible to show up. It took a lot of trial and error, but somehow I've managed it! There's still a lot to learn, but I've still got improvements I want to make, so I'll be digging in every so often to improve things around here.
-
-For now - what can you expect to find here? I intend to write about a few things: 
-
-* 100 Days of Code logs - more detailed than what I can write on Twitter
-* Learning guides - how I got through difficult challenges
-* Miscellaneous struggles and successes related to learning to code & job hunting
-
-So - welcome along on the journey! I'll write a bit more about the challenges I've faced so far getting this blog set up soon, and the 100 Days posts should start tomorrow. For now - have a great night, and I'll see ya'll again soon!
-]]></description><link>https://lindakat-blogs.netlify.com/posts/hello-world</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/hello-world</guid><category><![CDATA[personal]]></category><category><![CDATA[behindTheScenes]]></category><pubDate>Mon, 08 Jul 2019 05:50:55 GMT</pubDate></item><item><title><![CDATA[Hello World - I'm Learning Vue!]]></title><description><![CDATA[
+]]></description><link>https://lindakat-blogs.netlify.com/posts/stamp-inventory-refactor-part-1</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/stamp-inventory-refactor-part-1</guid><category><![CDATA[stampInventory]]></category><pubDate>Wed, 06 Nov 2019 06:30:53 GMT</pubDate></item><item><title><![CDATA[Hello World - I'm Learning Vue!]]></title><description><![CDATA[
 I've been wanting to learn a framework for a little while now, & it was recently advised to me that it would be smart to do job-wise. So I've finally decided to buckle down & choose one, & decided on Vue!
 
 My reasoning - it's open source based; people I respect in the field rave about it & work on it; it's growing quickly; & it seemed to be a bit of a middle ground between React & Angular. Plus, I'm using a framework based on it for my personal blog already!

@@ -2,7 +2,7 @@
   <Layout>
       <ul class="all-posts">
         <li v-for="post in postData" :key="post.id" class="post-item">
-          <PostCard :postData="post"></PostCard>
+          <PostCard :post-data="post"></PostCard>
         </li>
       </ul>
     <Pager :info="$page.allPost.pageInfo" class="pager-styles" />
@@ -32,7 +32,7 @@
 
 <script>
   import { Pager } from "gridsome";
-  import PostCard from "../components/PostCard.vue";
+  import PostCard from "~/components/PostCard.vue";
 
   export default {
     data () {
@@ -44,11 +44,9 @@
       Pager,
       PostCard
     },
-    computed: {
-      posts() {
-        let getPosts = this.$page.allPost.edges.map(e => e.node);
-        this.postData = getPosts;
-      }
+    created: function() {
+      let getPosts = this.$page.allPost.edges.map(e => e.node);
+      this.postData = getPosts;
     }
   };
 </script>

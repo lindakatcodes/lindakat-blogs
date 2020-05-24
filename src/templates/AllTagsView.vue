@@ -33,7 +33,7 @@
 </page-query>
 
 <script>
-import PostCard from "../components/PostCard.vue";
+import PostCard from "~/components/PostCard.vue";
 
 export default {
   data () {
@@ -49,11 +49,9 @@ export default {
     components: {
       PostCard
     },
-    computed: {
-        posts() {
-          let getPosts = this.$page.tag.belongsTo.edges.map(e => e.node);
-          this.postData = getPosts;
-        }
+    created: function() {
+      let getPosts = this.$page.tag.belongsTo.edges.map(e => e.node);
+      this.postData = getPosts; 
     }
 };
 </script>
