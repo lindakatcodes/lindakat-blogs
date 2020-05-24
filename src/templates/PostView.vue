@@ -312,7 +312,7 @@
 
     .dev, .twitter, .prev-link, .next-link {
       justify-self: center;
-      font-size: 1.1em;
+      font-size: 1em;
     }
   }
 </style>

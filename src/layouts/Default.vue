@@ -189,6 +189,17 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media screen and (max-width: 500px) {
+  .main-content {
+    margin-top: 0;
+    margin-bottom: 25%;
+  }
+
+  .footer {
+    margin-top: 15%;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .title {
     font-size: 1.6em;

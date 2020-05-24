@@ -95,14 +95,15 @@
 
   @media screen and (max-width: 500px) {
     .pager-styles {
-      margin: 10% auto 0;
+      margin: 20% auto 0;
       justify-content: space-around;
-      width: 50%;
+      width: 70%;
     }
 
     .pager-styles a {
       font-size: 1.5em;
       padding: 3% 2.5%;
+      margin: 5%;
     }
   }
 
