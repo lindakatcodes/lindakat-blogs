@@ -1,11 +1,55 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[LindaKat's Tech Blog]]></title><description><![CDATA[LindaKat's Tech Blog]]></description><link>https://lindakat-blogs.netlify.com</link><generator>RSS for Node</generator><lastBuildDate>Sun, 24 May 2020 07:45:29 GMT</lastBuildDate><atom:link href="https://lindakat-blogs.netlify.com/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[100 Days of Code - R2D17]]></title><description><![CDATA[Today was all about getting started with testing Node! Specifically, we're going to be testing the task manager app we've been creating as part of [a Udemy course on learning Nodejs](https://www.udemy.com/the-complete-nodejs-developer-course-2/).
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[LindaKat's Tech Blog]]></title><description><![CDATA[LindaKat's Tech Blog]]></description><link>https://lindakat-blogs.netlify.com</link><generator>RSS for Node</generator><lastBuildDate>Tue, 26 May 2020 22:53:21 GMT</lastBuildDate><atom:link href="https://lindakat-blogs.netlify.com/rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Hello, World!]]></title><description><![CDATA[## Welcome to my new blog!
+
+This project got started because I wanted to start writing more tech-related posts. Twitter doesn't give me enough characters, and my other sites just didn't feel quite right. I'd been wanting to dip my toes into learning some actual frameworks, and since I had a long weekend - I decided to do some quick research and see what sounded good!
+
+I knew I wanted to learn Vue when I was ready, so I focused on that pretty quickly. And I knew I wanted something I could host on Netlify, since it's done well for me so far, and I could do it for free - so that meant whatever CMS I was going to use had to be online and likely server-less. I pretty quickly found Netlify CMS, and decided to give Gridsome a try. I hear so much about Gatsby, and Gridsome is meant to be very similar, just written around Vue. Alright - frameworks picked!
+
+I still know next to NOTHING about either of them (and now I've got GraphQL in the mix as well, as the database language), but I was able to figure out enough to get some basic styling done, and get all the details of the posts I wanted visible to show up. It took a lot of trial and error, but somehow I've managed it! There's still a lot to learn, but I've still got improvements I want to make, so I'll be digging in every so often to improve things around here.
+
+For now - what can you expect to find here? I intend to write about a few things: 
+
+* 100 Days of Code logs - more detailed than what I can write on Twitter
+* Learning guides - how I got through difficult challenges
+* Miscellaneous struggles and successes related to learning to code & job hunting
+
+So - welcome along on the journey! I'll write a bit more about the challenges I've faced so far getting this blog set up soon, and the 100 Days posts should start tomorrow. For now - have a great night, and I'll see ya'll again soon!
+]]></description><link>https://lindakat-blogs.netlify.com/posts/hello-world</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/hello-world</guid><category><![CDATA[personal]]></category><category><![CDATA[behindTheScenes]]></category><pubDate>Mon, 08 Jul 2019 05:50:55 GMT</pubDate></item><item><title><![CDATA[100 Days of Code - R2D17]]></title><description><![CDATA[Today was all about getting started with testing Node! Specifically, we're going to be testing the task manager app we've been creating as part of [a Udemy course on learning Nodejs](https://www.udemy.com/the-complete-nodejs-developer-course-2/).
 
 Tonight, all I really got through was installing our testing suite (we're using Jest), and then writing a few simple tests not related to our project, to start to get a feel for how it works.
 
 I'm actually rather excited about this section - I've known for awhile that testing (in particular automatic testing) is an important thing to do. However, I've never really taken the time to learn how to do this yet, or pick a framework for it. One of the many benefits of taking a course - decisions are made for you! :) So far, it seems fairly easy to use! It'll be interesting to get into the next few videos and see how we can actually apply it towards the API we wrote for our project. 
 
 I'm so used to taking courses on front-end projects, that it's a little odd to me that this time around, for this task manager project, we wrote an API that doesn't have a front-end, instead of writing either the front-end only, or both parts together! So far, I think I've been doing decently with Node. It helps that it's so heavily JS based, which is the main language I've focused my learning on. But it's thrown me many times when trying to write Node on my own, deciphering what works for Node and not the browser and vice versa. So I think it's helping a bit that this course is focused so much on just the Node section. A previous project (there's 4 total in the course) had us set up a little bit of a front end, but it was very simple, with just HTML and CSS, so no real confusion. Here's to hoping this is helping cement some of the differences in my brain!
-]]></description><link>https://lindakat-blogs.netlify.com/posts/100-days-of-code-r2d17</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/100-days-of-code-r2d17</guid><category><![CDATA[100DaysOfCode]]></category><pubDate>Wed, 10 Jul 2019 05:38:40 GMT</pubDate></item><item><title><![CDATA[100 Days of Code - R2D18 & 19]]></title><description><![CDATA[I've uncovered two new things about Gridsome this week!
+]]></description><link>https://lindakat-blogs.netlify.com/posts/100-days-of-code-r2d17</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/100-days-of-code-r2d17</guid><category><![CDATA[100DaysOfCode]]></category><pubDate>Wed, 10 Jul 2019 05:38:40 GMT</pubDate></item><item><title><![CDATA[Inside My Head Right Now]]></title><description><![CDATA[**I'm gonna be real with you - I've been struggling the past few days.** 
+
+I'm learning to code as a second career. So far in my life, I've only worked as retail associates, customer service roles, or admin assistant spots. Nothing code-specific yet. 
+
+I'm completely self-directed when it comes to coding - no college (for CS, anyways - I did go for music), no boot camps, no mentors. Just me, stumbling onto interesting courses and diving in. I definitely feel like a newb, but I also think I'm vaguely getting the hang of things. 
+
+Last year, I was given the chance to complete a Udacity nano-degree on a Google scholarship, and went through the mobile web track. It was challenging, and interesting, and I felt really accomplished when I completed the course. I chatted and met up with my first developer buddies. I learned things I hadn't come across yet. It promised that we'd have a mentor through the course, and that there would be career help afterwards. 
+
+Well, the mentor thing fell through pretty early on, and the career help was mostly little online courses on writing your resume and polishing your GitHub profile. Which were not completely unhelpful, but also didn't really feel like the guidance I thought I was going to get. None of it was personal. That's okay - that could be my misunderstanding. It would be an ultra amazing thing to have personalized coaching and help for so many students.
+
+The thing is - I'm very ready to move forward with the "getting a job" thing. I want to be working as a developer. There's still a ridiculous amount for me to learn, but I honestly think I've got enough of a handle on things to start being of some benefit to a team. I know how to solve my own issues; I can ask for help when I need it; I'm a bit slow at writing code but I can pretty consistently get it done; I'm open to learning from everyone around me, and I want to dive in and get better and be around other developers on a daily basis. 
+
+But man.....the job search is **ROUGH**. I don't feel like I qualify for 95% of the postings I find. And while yes, I think there is merit to applying for things you don't fully qualify for....when the entire posting reads like a foreign language, it's pretty clear that you wouldn't really have a chance. I don't want something that feels too easy, but I don't want to be drowning, either. 
+
+I haven't been applying to a ton of jobs, but I have applied to some that I felt I could get a good handle on and do well at. Only two so far (out of 10 or so) have said anything back to me personally, and both were rejections. The most recent one was last week, when I'd sent a follow up email to check on it. 
+
+It's never personal, the job rejection. Places will get multiple applications, and they don't actually know me. Still - it hit me hard, and I'm honestly still reeling a bit from it. I'm wondering if programming is actually a field I could fit into. I'm feeling like I still have years to go before I'll be "ready" enough to actually stand a chance. And unfortunately, personal situations in my life are such that I really need to be able to move relatively soon. My current job doesn't pay enough for me to move anywhere, and is a constant source of stress and unhappiness on top of that. So the need to find a new job is very real, and relatively time sensitive.
+
+And the thought of applying for other customer service or office assistant positions....it makes me want to cry. I don't know that my soul can handle many more of those positions. It feels like surrender, like failure, like all I'm good for is a pleasant face and surface level work. 
+
+Don't get me wrong - dealing with customers and running offices is tough work, and requires a lot more skill than most people realize. Still - I'm very ready to be done with that kind of life. And yet, very likely not ready for something more, something new. 
+
+Or maybe I am, and I just don't have my head on straight right now. 
+
+I have so many ideas for things I want to build, and ways I might be able to reword my resume and portfolio site to really start to showcase the best traits I have. It's just that so little of it is code, which seems like the main thing a company will want to see from me to hire me. It's so difficult to prove you're worth the risk, when you don't have any professional experience yet. (Yes, that old Catch 22.)
+
+I have hope, too. Not far under the surface, I've got the determination and perseverance to get back to the search and find more positions that seem possible. I've got the desire to build cool, helpful things; to keep learning and improving; to keep moving forward. My future isn't over; my path isn't a dead end. It just feels like it at this moment, while I'm feeling lost and without direction. A path will show itself soon, I'm sure of it.
+
+Until then...well, it's time to focus on the coding part of all of this a bit more, and try to distract myself from these down feelings. Making progress in learning and projects will inevitably help me feel better, which in turn will give me the brain space I need to make tweaks to my game plan and get back out there.
+]]></description><link>https://lindakat-blogs.netlify.com/posts/inside-my-head-right-now</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/inside-my-head-right-now</guid><category><![CDATA[jobSearch]]></category><pubDate>Wed, 17 Jul 2019 01:14:16 GMT</pubDate></item><item><title><![CDATA[100 Days of Code - R2D18 & 19]]></title><description><![CDATA[I've uncovered two new things about Gridsome this week!
 
 First - it's not going to tell you when something's failing on it's own (Vue fails silently). 
 
@@ -40,7 +84,93 @@ api.chainWebpack(config => { config.mode('development') });
 After saving and running the develop command again, everything still works! And when I stopped the server, moved one of my comment tags in the problem file from before, and tried to run develop again, I got the error message when it failed to build! 
 
 So now, should I have future errors in my files, I'll be able to actually see the error messages, which will help **A LOT** in trouble shooting! 🙌 Hooray for learning new things!
-]]></description><link>https://lindakat-blogs.netlify.com/posts/100-days-of-code-r2d18-19</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/100-days-of-code-r2d18-19</guid><category><![CDATA[Gridsome]]></category><category><![CDATA[100DaysOfCode]]></category><category><![CDATA[learning]]></category><pubDate>Fri, 19 Jul 2019 02:51:05 GMT</pubDate></item><item><title><![CDATA[AoC (Advent of Code) - 2019 Day 1!]]></title><description><![CDATA[Advent of Code is finally here, and I'm so excited!! This is such a fun code challenge, and I was really bummed when I couldn't keep up with it last year, so I'm determined to stay on it this year and follow through until the end!
+]]></description><link>https://lindakat-blogs.netlify.com/posts/100-days-of-code-r2d18-19</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/100-days-of-code-r2d18-19</guid><category><![CDATA[Gridsome]]></category><category><![CDATA[100DaysOfCode]]></category><category><![CDATA[learning]]></category><pubDate>Fri, 19 Jul 2019 02:51:05 GMT</pubDate></item><item><title><![CDATA[100DaysOfCode R2D27 - Rockin' (Web)Sockets!]]></title><description><![CDATA[I started the last project in my [Node course](https://www.udemy.com/the-complete-nodejs-developer-course-2/) - a chat app! I did the groundwork videos yesterday - getting libraries installed and new files/directories set up.
+
+Tonight, I started getting into the actual code. For this project, the main library we're using is [Socket.io](socket.io), which has been really cool so far! It's got me learning a little bit about web sockets, which is a term I've heard before but haven't really paid attention to.
+
+To my understanding - web sockets are an upgrade to HTTP request/response patterns. They create a connection between a server and a client (or multiple clients!), and keep that connection open so that both sides can send data to each other even faster than you're able to with standard requests. I don't fully understand **HOW** it does this - just that it does.
+
+Socket.io builds on top of this, providing some nice API magic to make it even easier to work with server/client connections. What's really been cool to me is that it's centered around sending (emitting) custom events - so you can name your events anything you want! And then you can send along whatever data you want with it, and just set the other side to listen for that custom event. (It does have a few built ins as well, like connection and disconnect.)
+
+Let me share a simple example we worked on to play around with this. This will show us a basic counter value - then once a button is clicked, it will update the value and show us the new value.
+
+We started with an index.js file (our server file), which is running an Express app. (The io word you see is the variable that's set to our Express server, which socket.io is controlling.) In this file, we set up a variable for a counter, and then when a new client-side connection comes in, we send (emit) a custom named event, and the current value of our count variable.
+
+```js
+let count = 0;
+```
+
+```js
+io.on('connection', (socket) => {   socket.emit('countUpdated', count); })
+```
+
+The _socket.emit_ phrase is the key - that's what sends the data off to our client / browser side of things.
+
+On our client, we set up a listener function that listens for the custom event name we just created. When it detects that event being sent, it grabs the data that was sent along with it, and does something with it (in this example, just logs it to the console). (I should note - socket, in this instance, is also a variable defined in our file, which accesses the server we've got running.)
+
+```js
+socket.on('countUpdated', (count) => {   console.log('The count has been updated!', count) })
+```
+
+So now, when we first connect, our server is calling an event and sending the initial value of count, and our client is picking that event up and logging the value to the console.
+
+Then, if we click a button (which is set up in an html file) on the client side of things, we want to increase the value of count. So we grab the button click event in our client file, and fire off an event to our server, to signify the button was clicked. Again, the name of our event is custom - it could be called whatever! It just has to match on both sides.
+
+```js
+document.querySelector('#btnIncrease')  .addEventListener('click', () => {    socket.emit('increment') })
+```
+
+Once our server detects this event, we then want to increase the value of count, and send that first event back with the new count value. (This little call takes place inside the `io.on('connection')` call we did earlier.)
+
+```js
+socket.on('increment', () => { count++; io.emit('countUpdated', count) })
+```
+
+And that's it! Now when we first open the browser to our site, we get a message with the initial count value. And each time we click the button on the page, our client side detects the button click, sends an event to our server, adds 1 to the counter, and the server sends the new value back to the client!
+
+You might have noticed that sometimes I used `socket.emit`, and sometimes `io.emit`. There's 3 basic ideas / use cases that were introduced in the course (so far):
+
+* **socket.emit** - The socket keyword ties to a specific client, so it'll send events only to that particular client.
+* **io.emit** - Using the io keyword will send the events to all active, connected clients
+* **socket.broadcast.emit** - This isn't in the examples above, but this will send an event to all connected clients **EXCEPT** the specific client you're in (we use this in the course for when a user logs in or out - you want others to see that a new user has joined or left, but you yourself don't need to see when you joined a chat!)
+
+It's been really fun tonight, building out the core functionality for our app. It takes so little code to send and receive information on both ends of the app! It's boggling my mind. 🤯 I'm excited to get back to it, and keep working on this project! I already have ideas for how I'd like to use this information. 😊
+]]></description><link>https://lindakat-blogs.netlify.com/posts/100daysofcode-r2d27-rockin-web-sockets</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/100daysofcode-r2d27-rockin-web-sockets</guid><category><![CDATA[100DaysOfCode]]></category><category><![CDATA[nodeCourse]]></category><pubDate>Wed, 31 Jul 2019 05:29:23 GMT</pubDate></item><item><title><![CDATA[Stamp Inventory Refactor - part 1!]]></title><description><![CDATA[As the title suggests - tonight was spent making some reasonable progress towards updating my stamp inventory site!
+
+A little background on this - I currently work for a print shop, and am the only person who makes self-inking stamps. A few years ago, when I first started learning to code, I decided I wanted to make a little site that could help me keep track of how many of each size stamp I have left in inventory, so it would be a bit easier to see when I needed to reorder things. 
+
+At the time, I had taken a few online courses on spreadsheets and SQL, and felt like I might be able to make something that would work well. After a few failed attempts, all I was left with was frustration and a broken site. 
+
+Finally, I managed to figure out how to hook my site up to a Google spreadsheet, and had a real working site! I was so stoked. It took a lot of hair pulling and it wasn't the absolute best, but it worked and updated properly and I showed it off to everyone I could. 
+
+***
+
+Fast forward a few years. I want to make stylistic changes to it, but remember the frustration and haven't touched the Google sheets API since the first time I made this work. I've finished a few courses that used MongoDB. I need new projects on my portfolio to help with the job search. 
+
+And so, the decision to refactor my site was made!
+
+I've been slowly attempting to work on this off and on for a few weeks - I was able to dismantle all of the jQuery and Google sheets things I wasn't going to need, and through following some FreeCodeCamp material (and my memory of my other courses) got the basics of the Express server in place. But I hadn't really made much progress on actually putting in the database and getting the site to talk to it. 
+
+Well, tonight I finally really got down to it, and made some progress! I fleshed out the Express server part a bit, got my MongoDB cluster set up on Atlas and the connection string saved in my project, and cleaned up the last bit of the file structure. Doesn't feel like much to spell it out, but it's more direct progress than I've made since I started working on it again, so I'll take it!
+
+Mind you, I can't get it started on my local testing site yet. 😜 But I'm fairly certain I can get that working tomorrow (🤞). I just ran out of time tonight, since I was working in the local library and they were about to close. 
+
+***
+
+What I still can't decide on, is how I want to do my schemas. 
+
+We carry 5 different sizes of stamps, and for each size I keep track of the die box (the actual stamp part), and the mount (the holder for the die box). I'm also loosely keeping track of the 3 ink colors, and the gloves and 2 sheets we use to actually print the design and flash it onto the stamp. 
+
+Do I want to keep each individual piece as it's own type, that just has a name and a quantity? This seems like it might be the best option. However, I do want to have some check boxes for if some of the accessory parts are used, and would need a way to grab the current value for those and decrease them by the same amount (or automatically decrease it by 1 or 2, for the gloves and print sheets). Seems like I should be able to do that....but I'm not sure how difficult it will turn out to be. 
+
+I could also count each size as it's own thing, with a value for the die box and a value for the mount. This might make it easier to associate those 2 parts together, since more often than not they'll be used in the same quantity. But for some customers, we make new die boxes but reuse the mounts, so it won't always be equal in usage. And I still want a check box for the print sheets. 
+
+Though I could maybe work in a double tap / hold functionality to the space where I show those quantities, and change them that way....wouldn't be quite as nice as changing it at the same time as the stamp option, but we do have times where people order more than one size so it wouldn't be that big of a deal to change each item separately. That make actually work really nicely, since I'm currently using a form to mark each item so anything will be better than that. 
+
+I would also really like a nicer way to keep track of the inks....still trying to decide on the best way to do that. It's basically eye balled each time a die box gets filled, so it's not an exact, pre-filled amount that goes into each one. Which makes keeping track of how much is used a bit more difficult. 
+
+Clearly I have some more thinking to do! First task is to get it so I can actually view the site and access the database at all. Then I can make a decision on the schema so I can start putting actual data into it! 😊
+]]></description><link>https://lindakat-blogs.netlify.com/posts/stamp-inventory-refactor-part-1</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/stamp-inventory-refactor-part-1</guid><category><![CDATA[stampInventory]]></category><pubDate>Wed, 06 Nov 2019 06:30:53 GMT</pubDate></item><item><title><![CDATA[AoC (Advent of Code) - 2019 Day 1!]]></title><description><![CDATA[Advent of Code is finally here, and I'm so excited!! This is such a fun code challenge, and I was really bummed when I couldn't keep up with it last year, so I'm determined to stay on it this year and follow through until the end!
 
 <details>
 <summary>**Spoilers will follow from here on out** - avoid until you've solved the problems if you want! Click the arrow to view.</summary>
@@ -133,58 +263,7 @@ Part of this year's new changes on the official subreddit is a poem contest! Eac
 > Don't be afraid
 >
 > Elves will guide the way!
-]]></description><link>https://lindakat-blogs.netlify.com/posts/aoc-advent-of-code-2019-day-1</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/aoc-advent-of-code-2019-day-1</guid><category><![CDATA[AoC]]></category><category><![CDATA[adventOfCode]]></category><pubDate>Sun, 01 Dec 2019 07:24:50 GMT</pubDate></item><item><title><![CDATA[100DaysOfCode R2D27 - Rockin' (Web)Sockets!]]></title><description><![CDATA[I started the last project in my [Node course](https://www.udemy.com/the-complete-nodejs-developer-course-2/) - a chat app! I did the groundwork videos yesterday - getting libraries installed and new files/directories set up.
-
-Tonight, I started getting into the actual code. For this project, the main library we're using is [Socket.io](socket.io), which has been really cool so far! It's got me learning a little bit about web sockets, which is a term I've heard before but haven't really paid attention to.
-
-To my understanding - web sockets are an upgrade to HTTP request/response patterns. They create a connection between a server and a client (or multiple clients!), and keep that connection open so that both sides can send data to each other even faster than you're able to with standard requests. I don't fully understand **HOW** it does this - just that it does.
-
-Socket.io builds on top of this, providing some nice API magic to make it even easier to work with server/client connections. What's really been cool to me is that it's centered around sending (emitting) custom events - so you can name your events anything you want! And then you can send along whatever data you want with it, and just set the other side to listen for that custom event. (It does have a few built ins as well, like connection and disconnect.)
-
-Let me share a simple example we worked on to play around with this. This will show us a basic counter value - then once a button is clicked, it will update the value and show us the new value.
-
-We started with an index.js file (our server file), which is running an Express app. (The io word you see is the variable that's set to our Express server, which socket.io is controlling.) In this file, we set up a variable for a counter, and then when a new client-side connection comes in, we send (emit) a custom named event, and the current value of our count variable.
-
-```js
-let count = 0;
-```
-
-```js
-io.on('connection', (socket) => {   socket.emit('countUpdated', count); })
-```
-
-The _socket.emit_ phrase is the key - that's what sends the data off to our client / browser side of things.
-
-On our client, we set up a listener function that listens for the custom event name we just created. When it detects that event being sent, it grabs the data that was sent along with it, and does something with it (in this example, just logs it to the console). (I should note - socket, in this instance, is also a variable defined in our file, which accesses the server we've got running.)
-
-```js
-socket.on('countUpdated', (count) => {   console.log('The count has been updated!', count) })
-```
-
-So now, when we first connect, our server is calling an event and sending the initial value of count, and our client is picking that event up and logging the value to the console.
-
-Then, if we click a button (which is set up in an html file) on the client side of things, we want to increase the value of count. So we grab the button click event in our client file, and fire off an event to our server, to signify the button was clicked. Again, the name of our event is custom - it could be called whatever! It just has to match on both sides.
-
-```js
-document.querySelector('#btnIncrease')  .addEventListener('click', () => {    socket.emit('increment') })
-```
-
-Once our server detects this event, we then want to increase the value of count, and send that first event back with the new count value. (This little call takes place inside the `io.on('connection')` call we did earlier.)
-
-```js
-socket.on('increment', () => { count++; io.emit('countUpdated', count) })
-```
-
-And that's it! Now when we first open the browser to our site, we get a message with the initial count value. And each time we click the button on the page, our client side detects the button click, sends an event to our server, adds 1 to the counter, and the server sends the new value back to the client!
-
-You might have noticed that sometimes I used `socket.emit`, and sometimes `io.emit`. There's 3 basic ideas / use cases that were introduced in the course (so far):
-
-* **socket.emit** - The socket keyword ties to a specific client, so it'll send events only to that particular client.
-* **io.emit** - Using the io keyword will send the events to all active, connected clients
-* **socket.broadcast.emit** - This isn't in the examples above, but this will send an event to all connected clients **EXCEPT** the specific client you're in (we use this in the course for when a user logs in or out - you want others to see that a new user has joined or left, but you yourself don't need to see when you joined a chat!)
-
-It's been really fun tonight, building out the core functionality for our app. It takes so little code to send and receive information on both ends of the app! It's boggling my mind. 🤯 I'm excited to get back to it, and keep working on this project! I already have ideas for how I'd like to use this information. 😊
-]]></description><link>https://lindakat-blogs.netlify.com/posts/100daysofcode-r2d27-rockin-web-sockets</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/100daysofcode-r2d27-rockin-web-sockets</guid><category><![CDATA[100DaysOfCode]]></category><category><![CDATA[nodeCourse]]></category><pubDate>Wed, 31 Jul 2019 05:29:23 GMT</pubDate></item><item><title><![CDATA[Do I Own This? A New Project!]]></title><description><![CDATA[I have this very first world problem. 
+]]></description><link>https://lindakat-blogs.netlify.com/posts/aoc-advent-of-code-2019-day-1</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/aoc-advent-of-code-2019-day-1</guid><category><![CDATA[AoC]]></category><category><![CDATA[adventOfCode]]></category><pubDate>Sun, 01 Dec 2019 07:24:50 GMT</pubDate></item><item><title><![CDATA[Do I Own This? A New Project!]]></title><description><![CDATA[I have this very first world problem. 
 
 You see, I love nail polish. Can't get enough. And so, most times when I'm at the store, I browse through the polish to see if anything is speaking to me. 
 
@@ -227,86 +306,7 @@ I'm also concerned, if I'm able to push it live to others, about it responsibly 
 Alright, so the idea is out there! Now to actually build the dang thing. 😎
 
 If anyone has any suggestions, please reach out & let me know! Especially if you've got thoughts on the back-end part of this, which is what's holding me back the most! It's entirely possible I'm way overthinking this, and should just focus on building for me and getting a working version up before I worry too much about the world at large. But I'd love to hear your thoughts on anything I've mentioned here! I intend to write about my process as I go along, so this is just the beginning. 💅
-]]></description><link>https://lindakat-blogs.netlify.com/posts/do-i-own-this-a-new-project</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/do-i-own-this-a-new-project</guid><category><![CDATA[doIOwnThis]]></category><category><![CDATA[personal]]></category><pubDate>Wed, 19 Feb 2020 04:45:14 GMT</pubDate></item><item><title><![CDATA[Hello, World!]]></title><description><![CDATA[## Welcome to my new blog!
-
-This project got started because I wanted to start writing more tech-related posts. Twitter doesn't give me enough characters, and my other sites just didn't feel quite right. I'd been wanting to dip my toes into learning some actual frameworks, and since I had a long weekend - I decided to do some quick research and see what sounded good!
-
-I knew I wanted to learn Vue when I was ready, so I focused on that pretty quickly. And I knew I wanted something I could host on Netlify, since it's done well for me so far, and I could do it for free - so that meant whatever CMS I was going to use had to be online and likely server-less. I pretty quickly found Netlify CMS, and decided to give Gridsome a try. I hear so much about Gatsby, and Gridsome is meant to be very similar, just written around Vue. Alright - frameworks picked!
-
-I still know next to NOTHING about either of them (and now I've got GraphQL in the mix as well, as the database language), but I was able to figure out enough to get some basic styling done, and get all the details of the posts I wanted visible to show up. It took a lot of trial and error, but somehow I've managed it! There's still a lot to learn, but I've still got improvements I want to make, so I'll be digging in every so often to improve things around here.
-
-For now - what can you expect to find here? I intend to write about a few things: 
-
-* 100 Days of Code logs - more detailed than what I can write on Twitter
-* Learning guides - how I got through difficult challenges
-* Miscellaneous struggles and successes related to learning to code & job hunting
-
-So - welcome along on the journey! I'll write a bit more about the challenges I've faced so far getting this blog set up soon, and the 100 Days posts should start tomorrow. For now - have a great night, and I'll see ya'll again soon!
-]]></description><link>https://lindakat-blogs.netlify.com/posts/hello-world</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/hello-world</guid><category><![CDATA[personal]]></category><category><![CDATA[behindTheScenes]]></category><pubDate>Mon, 08 Jul 2019 05:50:55 GMT</pubDate></item><item><title><![CDATA[Inside My Head Right Now]]></title><description><![CDATA[**I'm gonna be real with you - I've been struggling the past few days.** 
-
-I'm learning to code as a second career. So far in my life, I've only worked as retail associates, customer service roles, or admin assistant spots. Nothing code-specific yet. 
-
-I'm completely self-directed when it comes to coding - no college (for CS, anyways - I did go for music), no boot camps, no mentors. Just me, stumbling onto interesting courses and diving in. I definitely feel like a newb, but I also think I'm vaguely getting the hang of things. 
-
-Last year, I was given the chance to complete a Udacity nano-degree on a Google scholarship, and went through the mobile web track. It was challenging, and interesting, and I felt really accomplished when I completed the course. I chatted and met up with my first developer buddies. I learned things I hadn't come across yet. It promised that we'd have a mentor through the course, and that there would be career help afterwards. 
-
-Well, the mentor thing fell through pretty early on, and the career help was mostly little online courses on writing your resume and polishing your GitHub profile. Which were not completely unhelpful, but also didn't really feel like the guidance I thought I was going to get. None of it was personal. That's okay - that could be my misunderstanding. It would be an ultra amazing thing to have personalized coaching and help for so many students.
-
-The thing is - I'm very ready to move forward with the "getting a job" thing. I want to be working as a developer. There's still a ridiculous amount for me to learn, but I honestly think I've got enough of a handle on things to start being of some benefit to a team. I know how to solve my own issues; I can ask for help when I need it; I'm a bit slow at writing code but I can pretty consistently get it done; I'm open to learning from everyone around me, and I want to dive in and get better and be around other developers on a daily basis. 
-
-But man.....the job search is **ROUGH**. I don't feel like I qualify for 95% of the postings I find. And while yes, I think there is merit to applying for things you don't fully qualify for....when the entire posting reads like a foreign language, it's pretty clear that you wouldn't really have a chance. I don't want something that feels too easy, but I don't want to be drowning, either. 
-
-I haven't been applying to a ton of jobs, but I have applied to some that I felt I could get a good handle on and do well at. Only two so far (out of 10 or so) have said anything back to me personally, and both were rejections. The most recent one was last week, when I'd sent a follow up email to check on it. 
-
-It's never personal, the job rejection. Places will get multiple applications, and they don't actually know me. Still - it hit me hard, and I'm honestly still reeling a bit from it. I'm wondering if programming is actually a field I could fit into. I'm feeling like I still have years to go before I'll be "ready" enough to actually stand a chance. And unfortunately, personal situations in my life are such that I really need to be able to move relatively soon. My current job doesn't pay enough for me to move anywhere, and is a constant source of stress and unhappiness on top of that. So the need to find a new job is very real, and relatively time sensitive.
-
-And the thought of applying for other customer service or office assistant positions....it makes me want to cry. I don't know that my soul can handle many more of those positions. It feels like surrender, like failure, like all I'm good for is a pleasant face and surface level work. 
-
-Don't get me wrong - dealing with customers and running offices is tough work, and requires a lot more skill than most people realize. Still - I'm very ready to be done with that kind of life. And yet, very likely not ready for something more, something new. 
-
-Or maybe I am, and I just don't have my head on straight right now. 
-
-I have so many ideas for things I want to build, and ways I might be able to reword my resume and portfolio site to really start to showcase the best traits I have. It's just that so little of it is code, which seems like the main thing a company will want to see from me to hire me. It's so difficult to prove you're worth the risk, when you don't have any professional experience yet. (Yes, that old Catch 22.)
-
-I have hope, too. Not far under the surface, I've got the determination and perseverance to get back to the search and find more positions that seem possible. I've got the desire to build cool, helpful things; to keep learning and improving; to keep moving forward. My future isn't over; my path isn't a dead end. It just feels like it at this moment, while I'm feeling lost and without direction. A path will show itself soon, I'm sure of it.
-
-Until then...well, it's time to focus on the coding part of all of this a bit more, and try to distract myself from these down feelings. Making progress in learning and projects will inevitably help me feel better, which in turn will give me the brain space I need to make tweaks to my game plan and get back out there.
-]]></description><link>https://lindakat-blogs.netlify.com/posts/inside-my-head-right-now</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/inside-my-head-right-now</guid><category><![CDATA[jobSearch]]></category><pubDate>Wed, 17 Jul 2019 01:14:16 GMT</pubDate></item><item><title><![CDATA[Stamp Inventory Refactor - part 1!]]></title><description><![CDATA[As the title suggests - tonight was spent making some reasonable progress towards updating my stamp inventory site!
-
-A little background on this - I currently work for a print shop, and am the only person who makes self-inking stamps. A few years ago, when I first started learning to code, I decided I wanted to make a little site that could help me keep track of how many of each size stamp I have left in inventory, so it would be a bit easier to see when I needed to reorder things. 
-
-At the time, I had taken a few online courses on spreadsheets and SQL, and felt like I might be able to make something that would work well. After a few failed attempts, all I was left with was frustration and a broken site. 
-
-Finally, I managed to figure out how to hook my site up to a Google spreadsheet, and had a real working site! I was so stoked. It took a lot of hair pulling and it wasn't the absolute best, but it worked and updated properly and I showed it off to everyone I could. 
-
-***
-
-Fast forward a few years. I want to make stylistic changes to it, but remember the frustration and haven't touched the Google sheets API since the first time I made this work. I've finished a few courses that used MongoDB. I need new projects on my portfolio to help with the job search. 
-
-And so, the decision to refactor my site was made!
-
-I've been slowly attempting to work on this off and on for a few weeks - I was able to dismantle all of the jQuery and Google sheets things I wasn't going to need, and through following some FreeCodeCamp material (and my memory of my other courses) got the basics of the Express server in place. But I hadn't really made much progress on actually putting in the database and getting the site to talk to it. 
-
-Well, tonight I finally really got down to it, and made some progress! I fleshed out the Express server part a bit, got my MongoDB cluster set up on Atlas and the connection string saved in my project, and cleaned up the last bit of the file structure. Doesn't feel like much to spell it out, but it's more direct progress than I've made since I started working on it again, so I'll take it!
-
-Mind you, I can't get it started on my local testing site yet. 😜 But I'm fairly certain I can get that working tomorrow (🤞). I just ran out of time tonight, since I was working in the local library and they were about to close. 
-
-***
-
-What I still can't decide on, is how I want to do my schemas. 
-
-We carry 5 different sizes of stamps, and for each size I keep track of the die box (the actual stamp part), and the mount (the holder for the die box). I'm also loosely keeping track of the 3 ink colors, and the gloves and 2 sheets we use to actually print the design and flash it onto the stamp. 
-
-Do I want to keep each individual piece as it's own type, that just has a name and a quantity? This seems like it might be the best option. However, I do want to have some check boxes for if some of the accessory parts are used, and would need a way to grab the current value for those and decrease them by the same amount (or automatically decrease it by 1 or 2, for the gloves and print sheets). Seems like I should be able to do that....but I'm not sure how difficult it will turn out to be. 
-
-I could also count each size as it's own thing, with a value for the die box and a value for the mount. This might make it easier to associate those 2 parts together, since more often than not they'll be used in the same quantity. But for some customers, we make new die boxes but reuse the mounts, so it won't always be equal in usage. And I still want a check box for the print sheets. 
-
-Though I could maybe work in a double tap / hold functionality to the space where I show those quantities, and change them that way....wouldn't be quite as nice as changing it at the same time as the stamp option, but we do have times where people order more than one size so it wouldn't be that big of a deal to change each item separately. That make actually work really nicely, since I'm currently using a form to mark each item so anything will be better than that. 
-
-I would also really like a nicer way to keep track of the inks....still trying to decide on the best way to do that. It's basically eye balled each time a die box gets filled, so it's not an exact, pre-filled amount that goes into each one. Which makes keeping track of how much is used a bit more difficult. 
-
-Clearly I have some more thinking to do! First task is to get it so I can actually view the site and access the database at all. Then I can make a decision on the schema so I can start putting actual data into it! 😊
-]]></description><link>https://lindakat-blogs.netlify.com/posts/stamp-inventory-refactor-part-1</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/stamp-inventory-refactor-part-1</guid><category><![CDATA[stampInventory]]></category><pubDate>Wed, 06 Nov 2019 06:30:53 GMT</pubDate></item><item><title><![CDATA[Hello World - I'm Learning Vue!]]></title><description><![CDATA[
+]]></description><link>https://lindakat-blogs.netlify.com/posts/do-i-own-this-a-new-project</link><guid isPermaLink="true">https://lindakat-blogs.netlify.com/posts/do-i-own-this-a-new-project</guid><category><![CDATA[doIOwnThis]]></category><category><![CDATA[personal]]></category><pubDate>Wed, 19 Feb 2020 04:45:14 GMT</pubDate></item><item><title><![CDATA[Hello World - I'm Learning Vue!]]></title><description><![CDATA[
 I've been wanting to learn a framework for a little while now, & it was recently advised to me that it would be smart to do job-wise. So I've finally decided to buckle down & choose one, & decided on Vue!
 
 My reasoning - it's open source based; people I respect in the field rave about it & work on it; it's growing quickly; & it seemed to be a bit of a middle ground between React & Angular. Plus, I'm using a framework based on it for my personal blog already!
